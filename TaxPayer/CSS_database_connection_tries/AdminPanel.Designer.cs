@@ -44,18 +44,20 @@
             this.stawkęPodatkuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kwoteWolnaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.odświeżToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.akktywójPrógToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showAllDatas = new System.Windows.Forms.DataGridView();
             this.freePayLabel = new System.Windows.Forms.Label();
             this.freePayShow = new System.Windows.Forms.Label();
             this.refreshButton = new System.Windows.Forms.Button();
             this.info_label = new System.Windows.Forms.Label();
+            this.Reactive = new System.Windows.Forms.Button();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.showAllDatas)).BeginInit();
             this.SuspendLayout();
             // 
             // logOut
             // 
-            this.logOut.Location = new System.Drawing.Point(606, 37);
+            this.logOut.Location = new System.Drawing.Point(868, 32);
             this.logOut.Name = "logOut";
             this.logOut.Size = new System.Drawing.Size(99, 44);
             this.logOut.TabIndex = 10;
@@ -65,7 +67,7 @@
             // 
             // addOpen
             // 
-            this.addOpen.Location = new System.Drawing.Point(606, 103);
+            this.addOpen.Location = new System.Drawing.Point(868, 98);
             this.addOpen.Name = "addOpen";
             this.addOpen.Size = new System.Drawing.Size(99, 44);
             this.addOpen.TabIndex = 13;
@@ -75,7 +77,7 @@
             // 
             // addDeleteOpen
             // 
-            this.addDeleteOpen.Location = new System.Drawing.Point(606, 169);
+            this.addDeleteOpen.Location = new System.Drawing.Point(868, 164);
             this.addDeleteOpen.Name = "addDeleteOpen";
             this.addDeleteOpen.Size = new System.Drawing.Size(99, 55);
             this.addDeleteOpen.TabIndex = 14;
@@ -85,7 +87,7 @@
             // 
             // taxFreeOpen
             // 
-            this.taxFreeOpen.Location = new System.Drawing.Point(606, 244);
+            this.taxFreeOpen.Location = new System.Drawing.Point(868, 239);
             this.taxFreeOpen.Name = "taxFreeOpen";
             this.taxFreeOpen.Size = new System.Drawing.Size(99, 60);
             this.taxFreeOpen.TabIndex = 15;
@@ -101,7 +103,7 @@
             this.operacjeToolStripMenuItem});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(732, 24);
+            this.mainMenu.Size = new System.Drawing.Size(979, 24);
             this.mainMenu.TabIndex = 16;
             this.mainMenu.Text = "Główne menu";
             // 
@@ -147,7 +149,8 @@
             this.operacjeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dodajStawkęToolStripMenuItem,
             this.edytujToolStripMenuItem,
-            this.odświeżToolStripMenuItem});
+            this.odświeżToolStripMenuItem,
+            this.akktywójPrógToolStripMenuItem});
             this.operacjeToolStripMenuItem.Name = "operacjeToolStripMenuItem";
             this.operacjeToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.operacjeToolStripMenuItem.Text = "Operacje";
@@ -155,7 +158,7 @@
             // dodajStawkęToolStripMenuItem
             // 
             this.dodajStawkęToolStripMenuItem.Name = "dodajStawkęToolStripMenuItem";
-            this.dodajStawkęToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.dodajStawkęToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.dodajStawkęToolStripMenuItem.Text = "Dodaj stawkę";
             this.dodajStawkęToolStripMenuItem.Click += new System.EventHandler(this.dodajStawkęToolStripMenuItem_Click);
             // 
@@ -165,7 +168,7 @@
             this.stawkęPodatkuToolStripMenuItem,
             this.kwoteWolnaToolStripMenuItem});
             this.edytujToolStripMenuItem.Name = "edytujToolStripMenuItem";
-            this.edytujToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.edytujToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.edytujToolStripMenuItem.Text = "Edytuj";
             // 
             // stawkęPodatkuToolStripMenuItem
@@ -185,22 +188,29 @@
             // odświeżToolStripMenuItem
             // 
             this.odświeżToolStripMenuItem.Name = "odświeżToolStripMenuItem";
-            this.odświeżToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.odświeżToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.odświeżToolStripMenuItem.Text = "Odśwież";
             this.odświeżToolStripMenuItem.Click += new System.EventHandler(this.odświeżToolStripMenuItem_Click);
+            // 
+            // akktywójPrógToolStripMenuItem
+            // 
+            this.akktywójPrógToolStripMenuItem.Name = "akktywójPrógToolStripMenuItem";
+            this.akktywójPrógToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.akktywójPrógToolStripMenuItem.Text = "Akktywuj próg";
+            this.akktywójPrógToolStripMenuItem.Click += new System.EventHandler(this.akktywujPrógToolStripMenuItem_Click);
             // 
             // showAllDatas
             // 
             this.showAllDatas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.showAllDatas.Location = new System.Drawing.Point(12, 52);
             this.showAllDatas.Name = "showAllDatas";
-            this.showAllDatas.Size = new System.Drawing.Size(544, 252);
+            this.showAllDatas.Size = new System.Drawing.Size(822, 383);
             this.showAllDatas.TabIndex = 17;
             // 
             // freePayLabel
             // 
             this.freePayLabel.AutoSize = true;
-            this.freePayLabel.Location = new System.Drawing.Point(12, 326);
+            this.freePayLabel.Location = new System.Drawing.Point(12, 448);
             this.freePayLabel.Name = "freePayLabel";
             this.freePayLabel.Size = new System.Drawing.Size(128, 13);
             this.freePayLabel.TabIndex = 18;
@@ -209,7 +219,7 @@
             // freePayShow
             // 
             this.freePayShow.AutoSize = true;
-            this.freePayShow.Location = new System.Drawing.Point(146, 326);
+            this.freePayShow.Location = new System.Drawing.Point(146, 448);
             this.freePayShow.Name = "freePayShow";
             this.freePayShow.Size = new System.Drawing.Size(10, 13);
             this.freePayShow.TabIndex = 19;
@@ -217,7 +227,7 @@
             // 
             // refreshButton
             // 
-            this.refreshButton.Location = new System.Drawing.Point(606, 318);
+            this.refreshButton.Location = new System.Drawing.Point(868, 313);
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.Size = new System.Drawing.Size(99, 44);
             this.refreshButton.TabIndex = 20;
@@ -230,15 +240,26 @@
             this.info_label.AutoSize = true;
             this.info_label.Location = new System.Drawing.Point(12, 33);
             this.info_label.Name = "info_label";
-            this.info_label.Size = new System.Drawing.Size(201, 13);
+            this.info_label.Size = new System.Drawing.Size(162, 13);
             this.info_label.TabIndex = 21;
-            this.info_label.Text = "Flaga: 0 - próg usunięty, 1 - próg aktywny";
+            this.info_label.Text = "Flagi: 0 - nieaktywne, 1 -aktywne";
+            // 
+            // Reactive
+            // 
+            this.Reactive.Location = new System.Drawing.Point(868, 391);
+            this.Reactive.Name = "Reactive";
+            this.Reactive.Size = new System.Drawing.Size(99, 44);
+            this.Reactive.TabIndex = 22;
+            this.Reactive.Text = "Aktywuj próg ponownie";
+            this.Reactive.UseVisualStyleBackColor = true;
+            this.Reactive.Click += new System.EventHandler(this.Reactive_Click);
             // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(732, 374);
+            this.ClientSize = new System.Drawing.Size(979, 502);
+            this.Controls.Add(this.Reactive);
             this.Controls.Add(this.info_label);
             this.Controls.Add(this.refreshButton);
             this.Controls.Add(this.freePayShow);
@@ -251,9 +272,9 @@
             this.Controls.Add(this.mainMenu);
             this.MainMenuStrip = this.mainMenu;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(748, 412);
+            this.MaximumSize = new System.Drawing.Size(995, 540);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(748, 412);
+            this.MinimumSize = new System.Drawing.Size(995, 540);
             this.Name = "AdminPanel";
             this.Text = "AdminPanel";
             this.mainMenu.ResumeLayout(false);
@@ -286,5 +307,7 @@
         private System.Windows.Forms.ToolStripMenuItem odświeżToolStripMenuItem;
         private System.Windows.Forms.Button refreshButton;
         private System.Windows.Forms.Label info_label;
+        private System.Windows.Forms.Button Reactive;
+        private System.Windows.Forms.ToolStripMenuItem akktywójPrógToolStripMenuItem;
     }
 }

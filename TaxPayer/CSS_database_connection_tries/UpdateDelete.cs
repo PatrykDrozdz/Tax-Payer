@@ -125,10 +125,14 @@ namespace CSS_database_connection_tries
                 while (queryReader.Read())
                 {
                     string value = queryReader.GetString("value");
+                    string guaranteedAmount = queryReader.GetString("guaranteedAmount");
+                    string downPayment = queryReader.GetString("downPayment");
                     string maxPayment = queryReader.GetString("maxPayment");
                     string contents = queryReader.GetString("contents");
 
                     labelForValue.Text = value;
+                    labelForGuaranteedAmount.Text = guaranteedAmount;
+                    labelForDownPayment.Text = downPayment;
                     labelForMaxPayment.Text = maxPayment;
                     contentsTextLabel.Text = contents;
 
@@ -139,6 +143,11 @@ namespace CSS_database_connection_tries
             {
                 MessageBox.Show(ex.Message);
             }
+
+        }
+
+        private void UpdateDelete_Load(object sender, EventArgs e)
+        {
 
         }
     }

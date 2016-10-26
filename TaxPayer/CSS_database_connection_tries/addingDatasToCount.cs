@@ -64,7 +64,7 @@ namespace CSS_database_connection_tries
         {
             this.setIncomme((double)this.incommeUpDown.Value);
 
-            this.setOutcomme((double)this.outcommeUpDown.Value);
+            this.setOutcomme((double)this.outcommeSocialUpDown.Value);
 
 
             Result r = new Result(this);

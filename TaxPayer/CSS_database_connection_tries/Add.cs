@@ -18,6 +18,8 @@ namespace CSS_database_connection_tries
             InitializeComponent();
         }
 
+        private int flagFreePayment = 1;
+
         private void logOut_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Wylogowany!");
@@ -31,16 +33,21 @@ namespace CSS_database_connection_tries
         private void insertToDB_Click(object sender, EventArgs e)
         {
 
+            if (this.freePaymentUnused.Checked)
+            {
+                flagFreePayment = 0;
+            }
+           
+
             string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
-            string insertQuery = "INSERT INTO taxpayer.taxes (idtaxes, value, maxPayment, contents, flagT) VALUES (NULL, '"+this.valueUpDown.Value+"', '"+this.maxPaymentUpDown.Value+"', '"+this.contentsText.Text+"', '1');";
+            string insertQuery = "INSERT INTO taxpayer.taxes (idtaxes, value, guaranteedAmount, downPayment, maxPayment, flagFreePayment, contents, flagT) VALUES (NULL, '"+this.valueUpDown.Value+"','"+this.guaranteedAmountUpDown.Value+"', '"+this.downPaymentUpDown.Value+"', '"+this.maxPaymentUpDown.Value+"', '"+this.flagFreePayment+"','"+this.contentsText.Text+"', '1');";
 
             MySqlConnection conn = new MySqlConnection(connDetail);
             MySqlCommand command = new MySqlCommand(insertQuery, conn);
 
             MySqlDataReader queryReader;
-
-            try
-            {
+            
+            try {
                 conn.Open();
 
                 queryReader = command.ExecuteReader();
@@ -48,10 +55,12 @@ namespace CSS_database_connection_tries
                 this.Close();
 
 
-            }
-            catch (Exception ex) {
+               }
+           catch (Exception ex)
+           {
                 MessageBox.Show(ex.Message);
-            }
+           }
+            
 
         }
     }

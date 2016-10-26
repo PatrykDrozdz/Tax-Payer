@@ -31,23 +31,26 @@
             this.incommeLabel = new System.Windows.Forms.Label();
             this.openChecking = new System.Windows.Forms.Button();
             this.incommeUpDown = new System.Windows.Forms.NumericUpDown();
-            this.outcommeUpDown = new System.Windows.Forms.NumericUpDown();
-            this.outcommeLabel = new System.Windows.Forms.Label();
+            this.outcommeSocialUpDown = new System.Windows.Forms.NumericUpDown();
+            this.outcommeSocialLabel = new System.Windows.Forms.Label();
             this.menuMain = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zalogujSięToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zamknijToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pomocToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.outcommeHealthLabel = new System.Windows.Forms.Label();
+            this.outcommeHealthUpDown = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.incommeUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.outcommeUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outcommeSocialUpDown)).BeginInit();
             this.menuMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.outcommeHealthUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // incommeLabel
             // 
             this.incommeLabel.AutoSize = true;
-            this.incommeLabel.Location = new System.Drawing.Point(142, 49);
+            this.incommeLabel.Location = new System.Drawing.Point(142, 24);
             this.incommeLabel.Name = "incommeLabel";
             this.incommeLabel.Size = new System.Drawing.Size(105, 13);
             this.incommeLabel.TabIndex = 0;
@@ -55,7 +58,7 @@
             // 
             // openChecking
             // 
-            this.openChecking.Location = new System.Drawing.Point(145, 232);
+            this.openChecking.Location = new System.Drawing.Point(145, 270);
             this.openChecking.Name = "openChecking";
             this.openChecking.Size = new System.Drawing.Size(120, 46);
             this.openChecking.TabIndex = 1;
@@ -71,7 +74,7 @@
             0,
             0,
             0});
-            this.incommeUpDown.Location = new System.Drawing.Point(145, 79);
+            this.incommeUpDown.Location = new System.Drawing.Point(145, 62);
             this.incommeUpDown.Maximum = new decimal(new int[] {
             276447232,
             23283,
@@ -81,32 +84,32 @@
             this.incommeUpDown.Size = new System.Drawing.Size(120, 20);
             this.incommeUpDown.TabIndex = 2;
             // 
-            // outcommeUpDown
+            // outcommeSocialUpDown
             // 
-            this.outcommeUpDown.DecimalPlaces = 2;
-            this.outcommeUpDown.Increment = new decimal(new int[] {
+            this.outcommeSocialUpDown.DecimalPlaces = 2;
+            this.outcommeSocialUpDown.Increment = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.outcommeUpDown.Location = new System.Drawing.Point(145, 163);
-            this.outcommeUpDown.Maximum = new decimal(new int[] {
+            this.outcommeSocialUpDown.Location = new System.Drawing.Point(145, 147);
+            this.outcommeSocialUpDown.Maximum = new decimal(new int[] {
             276447232,
             23283,
             0,
             0});
-            this.outcommeUpDown.Name = "outcommeUpDown";
-            this.outcommeUpDown.Size = new System.Drawing.Size(120, 20);
-            this.outcommeUpDown.TabIndex = 3;
+            this.outcommeSocialUpDown.Name = "outcommeSocialUpDown";
+            this.outcommeSocialUpDown.Size = new System.Drawing.Size(120, 20);
+            this.outcommeSocialUpDown.TabIndex = 3;
             // 
-            // outcommeLabel
+            // outcommeSocialLabel
             // 
-            this.outcommeLabel.AutoSize = true;
-            this.outcommeLabel.Location = new System.Drawing.Point(142, 128);
-            this.outcommeLabel.Name = "outcommeLabel";
-            this.outcommeLabel.Size = new System.Drawing.Size(95, 13);
-            this.outcommeLabel.TabIndex = 4;
-            this.outcommeLabel.Text = "PODAJ WYDATKI";
+            this.outcommeSocialLabel.AutoSize = true;
+            this.outcommeSocialLabel.Location = new System.Drawing.Point(71, 109);
+            this.outcommeSocialLabel.Name = "outcommeSocialLabel";
+            this.outcommeSocialLabel.Size = new System.Drawing.Size(269, 13);
+            this.outcommeSocialLabel.TabIndex = 4;
+            this.outcommeSocialLabel.Text = "PODAJ WYDATKI NA UBEZPIECZENIE SPOŁECZNE";
             // 
             // menuMain
             // 
@@ -157,13 +160,42 @@
             this.pomocToolStripMenuItem.Text = "Pomoc";
             this.pomocToolStripMenuItem.Click += new System.EventHandler(this.pomocToolStripMenuItem_Click);
             // 
+            // outcommeHealthLabel
+            // 
+            this.outcommeHealthLabel.AutoSize = true;
+            this.outcommeHealthLabel.Location = new System.Drawing.Point(71, 196);
+            this.outcommeHealthLabel.Name = "outcommeHealthLabel";
+            this.outcommeHealthLabel.Size = new System.Drawing.Size(276, 13);
+            this.outcommeHealthLabel.TabIndex = 6;
+            this.outcommeHealthLabel.Text = "PODAJ WYDATKI NA UBEZPIECZENIE ZDROWOTNE";
+            // 
+            // outcommeHealthUpDown
+            // 
+            this.outcommeHealthUpDown.DecimalPlaces = 2;
+            this.outcommeHealthUpDown.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.outcommeHealthUpDown.Location = new System.Drawing.Point(145, 224);
+            this.outcommeHealthUpDown.Maximum = new decimal(new int[] {
+            276447232,
+            23283,
+            0,
+            0});
+            this.outcommeHealthUpDown.Name = "outcommeHealthUpDown";
+            this.outcommeHealthUpDown.Size = new System.Drawing.Size(120, 20);
+            this.outcommeHealthUpDown.TabIndex = 7;
+            // 
             // addingDatasToCount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(426, 345);
-            this.Controls.Add(this.outcommeLabel);
-            this.Controls.Add(this.outcommeUpDown);
+            this.Controls.Add(this.outcommeHealthUpDown);
+            this.Controls.Add(this.outcommeHealthLabel);
+            this.Controls.Add(this.outcommeSocialLabel);
+            this.Controls.Add(this.outcommeSocialUpDown);
             this.Controls.Add(this.incommeUpDown);
             this.Controls.Add(this.openChecking);
             this.Controls.Add(this.incommeLabel);
@@ -176,9 +208,10 @@
             this.Name = "addingDatasToCount";
             this.Text = "Sprawdź swoje podatki";
             ((System.ComponentModel.ISupportInitialize)(this.incommeUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.outcommeUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outcommeSocialUpDown)).EndInit();
             this.menuMain.ResumeLayout(false);
             this.menuMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.outcommeHealthUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,13 +222,15 @@
         private System.Windows.Forms.Label incommeLabel;
         private System.Windows.Forms.Button openChecking;
         private System.Windows.Forms.NumericUpDown incommeUpDown;
-        private System.Windows.Forms.NumericUpDown outcommeUpDown;
-        private System.Windows.Forms.Label outcommeLabel;
+        private System.Windows.Forms.NumericUpDown outcommeSocialUpDown;
+        private System.Windows.Forms.Label outcommeSocialLabel;
         private System.Windows.Forms.MenuStrip menuMain;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zalogujSięToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zamknijToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pomocToolStripMenuItem;
+        private System.Windows.Forms.Label outcommeHealthLabel;
+        private System.Windows.Forms.NumericUpDown outcommeHealthUpDown;
     }
 }

@@ -160,5 +160,15 @@ namespace CSS_database_connection_tries
             this.getDatas();
             this.getFreeTaxPayment();
         }
+
+        private void Reactive_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void akktywujPrógToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
