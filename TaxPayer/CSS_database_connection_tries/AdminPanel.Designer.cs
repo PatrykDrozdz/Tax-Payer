@@ -158,7 +158,7 @@
             // dodajStawkęToolStripMenuItem
             // 
             this.dodajStawkęToolStripMenuItem.Name = "dodajStawkęToolStripMenuItem";
-            this.dodajStawkęToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.dodajStawkęToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.dodajStawkęToolStripMenuItem.Text = "Dodaj stawkę";
             this.dodajStawkęToolStripMenuItem.Click += new System.EventHandler(this.dodajStawkęToolStripMenuItem_Click);
             // 
@@ -168,7 +168,7 @@
             this.stawkęPodatkuToolStripMenuItem,
             this.kwoteWolnaToolStripMenuItem});
             this.edytujToolStripMenuItem.Name = "edytujToolStripMenuItem";
-            this.edytujToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.edytujToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.edytujToolStripMenuItem.Text = "Edytuj";
             // 
             // stawkęPodatkuToolStripMenuItem
@@ -188,14 +188,14 @@
             // odświeżToolStripMenuItem
             // 
             this.odświeżToolStripMenuItem.Name = "odświeżToolStripMenuItem";
-            this.odświeżToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.odświeżToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.odświeżToolStripMenuItem.Text = "Odśwież";
             this.odświeżToolStripMenuItem.Click += new System.EventHandler(this.odświeżToolStripMenuItem_Click);
             // 
             // akktywójPrógToolStripMenuItem
             // 
             this.akktywójPrógToolStripMenuItem.Name = "akktywójPrógToolStripMenuItem";
-            this.akktywójPrógToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.akktywójPrógToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.akktywójPrógToolStripMenuItem.Text = "Akktywuj próg";
             this.akktywójPrógToolStripMenuItem.Click += new System.EventHandler(this.akktywujPrógToolStripMenuItem_Click);
             // 

@@ -52,6 +52,9 @@
             this.labelForDownPayment = new System.Windows.Forms.Label();
             this.guaranteedAmountLabel2 = new System.Windows.Forms.Label();
             this.labelForGuaranteedAmount = new System.Windows.Forms.Label();
+            this.unusedFreePayment = new System.Windows.Forms.CheckBox();
+            this.taxFreePaymentLabel = new System.Windows.Forms.Label();
+            this.labelForTaxFreePaymentInfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.maxPaymentUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.valueUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.downPaymentUpDown)).BeginInit();
@@ -61,7 +64,7 @@
             // idCombo
             // 
             this.idCombo.FormattingEnabled = true;
-            this.idCombo.Location = new System.Drawing.Point(491, 12);
+            this.idCombo.Location = new System.Drawing.Point(491, 17);
             this.idCombo.Name = "idCombo";
             this.idCombo.Size = new System.Drawing.Size(66, 21);
             this.idCombo.TabIndex = 0;
@@ -70,7 +73,7 @@
             // idLabel
             // 
             this.idLabel.AutoSize = true;
-            this.idLabel.Location = new System.Drawing.Point(433, 12);
+            this.idLabel.Location = new System.Drawing.Point(434, 17);
             this.idLabel.Name = "idLabel";
             this.idLabel.Size = new System.Drawing.Size(15, 13);
             this.idLabel.TabIndex = 1;
@@ -78,7 +81,7 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(49, 389);
+            this.deleteButton.Location = new System.Drawing.Point(49, 432);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(148, 42);
             this.deleteButton.TabIndex = 4;
@@ -88,7 +91,7 @@
             // 
             // editButton
             // 
-            this.editButton.Location = new System.Drawing.Point(576, 389);
+            this.editButton.Location = new System.Drawing.Point(578, 432);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(148, 42);
             this.editButton.TabIndex = 5;
@@ -135,7 +138,7 @@
             // contentsLabel
             // 
             this.contentsLabel.AutoSize = true;
-            this.contentsLabel.Location = new System.Drawing.Point(434, 233);
+            this.contentsLabel.Location = new System.Drawing.Point(434, 266);
             this.contentsLabel.Name = "contentsLabel";
             this.contentsLabel.Size = new System.Drawing.Size(70, 13);
             this.contentsLabel.TabIndex = 15;
@@ -161,10 +164,10 @@
             // 
             // contentsText
             // 
-            this.contentsText.Location = new System.Drawing.Point(437, 252);
+            this.contentsText.Location = new System.Drawing.Point(437, 288);
             this.contentsText.Multiline = true;
             this.contentsText.Name = "contentsText";
-            this.contentsText.Size = new System.Drawing.Size(374, 96);
+            this.contentsText.Size = new System.Drawing.Size(374, 124);
             this.contentsText.TabIndex = 12;
             // 
             // maxPaymentUpDown
@@ -206,7 +209,7 @@
             // contentsLabel2
             // 
             this.contentsLabel2.AutoSize = true;
-            this.contentsLabel2.Location = new System.Drawing.Point(46, 266);
+            this.contentsLabel2.Location = new System.Drawing.Point(46, 317);
             this.contentsLabel2.Name = "contentsLabel2";
             this.contentsLabel2.Size = new System.Drawing.Size(70, 13);
             this.contentsLabel2.TabIndex = 16;
@@ -215,7 +218,7 @@
             // contentsTextLabel
             // 
             this.contentsTextLabel.AutoSize = true;
-            this.contentsTextLabel.Location = new System.Drawing.Point(51, 288);
+            this.contentsTextLabel.Location = new System.Drawing.Point(51, 339);
             this.contentsTextLabel.Name = "contentsTextLabel";
             this.contentsTextLabel.Size = new System.Drawing.Size(10, 13);
             this.contentsTextLabel.TabIndex = 17;
@@ -278,7 +281,7 @@
             // downPaymentLabel2
             // 
             this.downPaymentLabel2.AutoSize = true;
-            this.downPaymentLabel2.Location = new System.Drawing.Point(46, 135);
+            this.downPaymentLabel2.Location = new System.Drawing.Point(46, 133);
             this.downPaymentLabel2.Name = "downPaymentLabel2";
             this.downPaymentLabel2.Size = new System.Drawing.Size(196, 13);
             this.downPaymentLabel2.TabIndex = 23;
@@ -287,7 +290,7 @@
             // labelForDownPayment
             // 
             this.labelForDownPayment.AutoSize = true;
-            this.labelForDownPayment.Location = new System.Drawing.Point(51, 171);
+            this.labelForDownPayment.Location = new System.Drawing.Point(51, 167);
             this.labelForDownPayment.Name = "labelForDownPayment";
             this.labelForDownPayment.Size = new System.Drawing.Size(10, 13);
             this.labelForDownPayment.TabIndex = 22;
@@ -296,7 +299,7 @@
             // guaranteedAmountLabel2
             // 
             this.guaranteedAmountLabel2.AutoSize = true;
-            this.guaranteedAmountLabel2.Location = new System.Drawing.Point(46, 77);
+            this.guaranteedAmountLabel2.Location = new System.Drawing.Point(46, 70);
             this.guaranteedAmountLabel2.Name = "guaranteedAmountLabel2";
             this.guaranteedAmountLabel2.Size = new System.Drawing.Size(99, 13);
             this.guaranteedAmountLabel2.TabIndex = 25;
@@ -305,17 +308,48 @@
             // labelForGuaranteedAmount
             // 
             this.labelForGuaranteedAmount.AutoSize = true;
-            this.labelForGuaranteedAmount.Location = new System.Drawing.Point(51, 110);
+            this.labelForGuaranteedAmount.Location = new System.Drawing.Point(51, 107);
             this.labelForGuaranteedAmount.Name = "labelForGuaranteedAmount";
             this.labelForGuaranteedAmount.Size = new System.Drawing.Size(10, 13);
             this.labelForGuaranteedAmount.TabIndex = 24;
             this.labelForGuaranteedAmount.Text = "-";
             // 
+            // unusedFreePayment
+            // 
+            this.unusedFreePayment.AutoSize = true;
+            this.unusedFreePayment.Location = new System.Drawing.Point(437, 233);
+            this.unusedFreePayment.Name = "unusedFreePayment";
+            this.unusedFreePayment.Size = new System.Drawing.Size(215, 17);
+            this.unusedFreePayment.TabIndex = 26;
+            this.unusedFreePayment.Text = "Nie odlicza się kwoty wolnej od podatku";
+            this.unusedFreePayment.UseVisualStyleBackColor = true;
+            // 
+            // taxFreePaymentLabel
+            // 
+            this.taxFreePaymentLabel.AutoSize = true;
+            this.taxFreePaymentLabel.Location = new System.Drawing.Point(51, 256);
+            this.taxFreePaymentLabel.Name = "taxFreePaymentLabel";
+            this.taxFreePaymentLabel.Size = new System.Drawing.Size(131, 13);
+            this.taxFreePaymentLabel.TabIndex = 27;
+            this.taxFreePaymentLabel.Text = "Kwota owlna od podatku: ";
+            // 
+            // labelForTaxFreePaymentInfo
+            // 
+            this.labelForTaxFreePaymentInfo.AutoSize = true;
+            this.labelForTaxFreePaymentInfo.Location = new System.Drawing.Point(51, 288);
+            this.labelForTaxFreePaymentInfo.Name = "labelForTaxFreePaymentInfo";
+            this.labelForTaxFreePaymentInfo.Size = new System.Drawing.Size(10, 13);
+            this.labelForTaxFreePaymentInfo.TabIndex = 28;
+            this.labelForTaxFreePaymentInfo.Text = "-";
+            // 
             // UpdateDelete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(852, 462);
+            this.ClientSize = new System.Drawing.Size(852, 486);
+            this.Controls.Add(this.labelForTaxFreePaymentInfo);
+            this.Controls.Add(this.taxFreePaymentLabel);
+            this.Controls.Add(this.unusedFreePayment);
             this.Controls.Add(this.guaranteedAmountLabel2);
             this.Controls.Add(this.labelForGuaranteedAmount);
             this.Controls.Add(this.downPaymentLabel2);
@@ -341,8 +375,9 @@
             this.Controls.Add(this.idLabel);
             this.Controls.Add(this.idCombo);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(868, 524);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(614, 407);
+            this.MinimumSize = new System.Drawing.Size(868, 524);
             this.Name = "UpdateDelete";
             this.Text = "Usuń lub edytuj stawkę podatkową ";
             this.Load += new System.EventHandler(this.UpdateDelete_Load);
@@ -381,5 +416,8 @@
         private System.Windows.Forms.Label labelForDownPayment;
         private System.Windows.Forms.Label guaranteedAmountLabel2;
         private System.Windows.Forms.Label labelForGuaranteedAmount;
+        private System.Windows.Forms.CheckBox unusedFreePayment;
+        private System.Windows.Forms.Label taxFreePaymentLabel;
+        private System.Windows.Forms.Label labelForTaxFreePaymentInfo;
     }
 }

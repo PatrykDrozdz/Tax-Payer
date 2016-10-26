@@ -163,12 +163,17 @@ namespace CSS_database_connection_tries
 
         private void Reactive_Click(object sender, EventArgs e)
         {
+            Reactive reac = new Reactive();
+
+            reac.ShowDialog();
 
         }
 
         private void akktywujPrógToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Reactive reac = new Reactive();
 
+            reac.ShowDialog();
         }
     }
 }

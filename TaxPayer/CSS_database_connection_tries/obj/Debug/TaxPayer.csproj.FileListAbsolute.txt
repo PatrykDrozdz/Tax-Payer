@@ -45,3 +45,4 @@ D:\programowanie\TaxPayer - repo\TaxPayer\CSS_database_connection_tries\obj\Debu
 D:\programowanie\TaxPayer - repo\TaxPayer\CSS_database_connection_tries\obj\Debug\CSS_database_connection_tries.TaxFreePayEdit.resources
 D:\programowanie\TaxPayer - repo\TaxPayer\CSS_database_connection_tries\obj\Debug\CSS_database_connection_tries.UpdateDelete.resources
 D:\programowanie\TaxPayer - repo\TaxPayer\CSS_database_connection_tries\obj\Debug\TaxPayer.csproj.GenerateResource.Cache
+D:\programowanie\TaxPayer - repo\TaxPayer\CSS_database_connection_tries\obj\Debug\CSS_database_connection_tries.Reactive.resources

@@ -11,20 +11,20 @@ using MySql.Data.MySqlClient;//konieczne do połączenia z db
 
 namespace CSS_database_connection_tries
 {
-    public partial class UpdateDelete : Form
+    public partial class Reactive : Form
     {
-        public UpdateDelete()
+        public Reactive()
         {
             InitializeComponent();
             fillComboId();
         }
 
-        private int flagFreePayment = 1;
 
-        void fillComboId() {
+        void fillComboId()
+        {
 
             string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
-            string selectQuery = "SELECT * FROM taxpayer.taxes WHERE flagT=1;";
+            string selectQuery = "SELECT * FROM taxpayer.taxes WHERE flagT=0;";
 
             MySqlConnection conn = new MySqlConnection(connDetail);
             MySqlCommand command = new MySqlCommand(selectQuery, conn);
@@ -36,7 +36,7 @@ namespace CSS_database_connection_tries
                 conn.Open();
 
                 queryReader = command.ExecuteReader();
-  
+
                 while (queryReader.Read())
                 {
                     string ids = queryReader.GetString("idtaxes");
@@ -51,74 +51,10 @@ namespace CSS_database_connection_tries
 
         }
 
-
-        private void deleteButton_Click(object sender, EventArgs e)
-        {
-
-            string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
-            string deleteQuery = "UPDATE taxpayer.taxes SET flagT='0' WHERE idtaxes='"+idCombo.Text+"' ;";
-
-            MySqlConnection conn = new MySqlConnection(connDetail);
-            MySqlCommand command = new MySqlCommand(deleteQuery, conn);
-
-            MySqlDataReader queryReader;
-
-            try
-            {
-                conn.Open();
-
-                queryReader = command.ExecuteReader();
-
-                MessageBox.Show("Usunięto kwotę podatku!");
-                this.Close();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void editButton_Click(object sender, EventArgs e)
-        {
-
-            if (this.unusedFreePayment.Checked)
-            {
-                this.flagFreePayment = 0;
-            }
-
-
-            string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
-            string updateQuery = "UPDATE taxpayer.taxes SET value='"+valueUpDown.Value+"', guaranteedAmount='"+this.guaranteedAmountUpDown.Value+"', downPayment='"+this.downPaymentUpDown.Value+"', maxPayment='"+maxPaymentUpDown.Value+"', flagFreePayment='"+this.flagFreePayment+"', contents='"+contentsText.Text+"' WHERE idtaxes='" + idCombo.Text + "' ;";
-
-            MySqlConnection conn = new MySqlConnection(connDetail);
-            MySqlCommand command = new MySqlCommand(updateQuery, conn);
-
-            MySqlDataReader queryReader;
-
-            try
-            {
-                conn.Open();
-
-                queryReader = command.ExecuteReader();
-
-                MessageBox.Show("Edytowano kwotę podatku!");
-
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-        }
-
         private void idCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
-            string insertQuery = "SELECT * FROM taxpayer.taxes WHERE flagT=1 AND idtaxes='"+idCombo.Text+"';";
+            string insertQuery = "SELECT * FROM taxpayer.taxes WHERE flagT=0 AND idtaxes='" + idCombo.Text + "';";
 
             MySqlConnection conn = new MySqlConnection(connDetail);
             MySqlCommand command = new MySqlCommand(insertQuery, conn);
@@ -146,9 +82,11 @@ namespace CSS_database_connection_tries
                     labelForMaxPayment.Text = maxPayment;
                     contentsTextLabel.Text = contents;
 
-                    if (flagFreePayment == 0) {
+                    if (flagFreePayment == 0)
+                    {
                         this.labelForTaxFreePaymentInfo.Text = "nieobowiązuje";
-                    } else if (flagFreePayment == 1)
+                    }
+                    else if (flagFreePayment == 1)
                     {
                         this.labelForTaxFreePaymentInfo.Text = "obowiązuje";
                     }
@@ -160,11 +98,33 @@ namespace CSS_database_connection_tries
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
 
-        private void UpdateDelete_Load(object sender, EventArgs e)
+        private void reactiveButton_Click(object sender, EventArgs e)
         {
+
+            string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
+            string updateQuery = "UPDATE taxpayer.taxes SET flagT='1' WHERE idtaxes='" + idCombo.Text + "' ;";
+
+            MySqlConnection conn = new MySqlConnection(connDetail);
+            MySqlCommand command = new MySqlCommand(updateQuery, conn);
+
+            MySqlDataReader queryReader;
+
+            try
+            {
+                conn.Open();
+
+                queryReader = command.ExecuteReader();
+
+                MessageBox.Show("Próg znów obowiązuje!");
+
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
     }
