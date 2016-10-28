@@ -11,26 +11,18 @@ using MySql.Data.MySqlClient;//konieczne do połączenia z db
 
 namespace CSS_database_connection_tries
 {
-    public partial class Result : Form 
+    public partial class addAdmin : Form
     {
-        addingDatasToCount add;
-        int count = 0;
-
-        public Result(addingDatasToCount add)
+        public addAdmin()
         {
             InitializeComponent();
-            this.add = add;
-            counting();
+            passTxt.PasswordChar = '*';
         }
 
-        void counting()
+        private void addAdministrator_Click(object sender, EventArgs e)
         {
-
-            //label1.Text = add.getIncomme().ToString();
-            //label2.Text = add.getOutcomme().ToString();
-
             string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
-            string selectQuery = "SELECT * FROM taxpayer.taxes WHERE flagT=1;";
+            string selectQuery = "SELECT * FROM taxpayer.admins;";
 
             MySqlConnection conn = new MySqlConnection(connDetail);
             MySqlCommand command = new MySqlCommand(selectQuery, conn);
@@ -43,11 +35,21 @@ namespace CSS_database_connection_tries
 
                 queryReader = command.ExecuteReader();
 
+
                 while (queryReader.Read())
                 {
-                    string ids = queryReader.GetString("idtaxes");
-                    //idCombo.Items.Add(ids);
-                    label1.Text = ids;
+
+                    string login = queryReader.GetString("login");
+
+                    if (login == logTxt.Text)
+                    {
+                        MessageBox.Show("Administrator o tym loginie już istnieje!");
+                    }
+                    else {
+                        MessageBox.Show("OK!");
+                    }
+
+
                 }
 
             }
@@ -55,13 +57,6 @@ namespace CSS_database_connection_tries
             {
                 MessageBox.Show(ex.Message);
             }
-
-
-        }
-
-        private void Result_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
         }
     }
 }

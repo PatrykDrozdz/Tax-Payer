@@ -35,10 +35,10 @@
             this.label_pass = new System.Windows.Forms.Label();
             this.menuMain = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pomocToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.liczenieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zamknijToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pomocToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,6 +104,20 @@
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.menuToolStripMenuItem.Text = "Menu";
             // 
+            // liczenieToolStripMenuItem
+            // 
+            this.liczenieToolStripMenuItem.Name = "liczenieToolStripMenuItem";
+            this.liczenieToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.liczenieToolStripMenuItem.Text = "Liczenie";
+            this.liczenieToolStripMenuItem.Click += new System.EventHandler(this.liczenieToolStripMenuItem_Click);
+            // 
+            // zamknijToolStripMenuItem
+            // 
+            this.zamknijToolStripMenuItem.Name = "zamknijToolStripMenuItem";
+            this.zamknijToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.zamknijToolStripMenuItem.Text = "Zamknij";
+            this.zamknijToolStripMenuItem.Click += new System.EventHandler(this.zamknijToolStripMenuItem_Click);
+            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -115,23 +129,9 @@
             // pomocToolStripMenuItem
             // 
             this.pomocToolStripMenuItem.Name = "pomocToolStripMenuItem";
-            this.pomocToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pomocToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.pomocToolStripMenuItem.Text = "Pomoc";
             this.pomocToolStripMenuItem.Click += new System.EventHandler(this.pomocToolStripMenuItem_Click);
-            // 
-            // liczenieToolStripMenuItem
-            // 
-            this.liczenieToolStripMenuItem.Name = "liczenieToolStripMenuItem";
-            this.liczenieToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.liczenieToolStripMenuItem.Text = "Liczenie";
-            this.liczenieToolStripMenuItem.Click += new System.EventHandler(this.liczenieToolStripMenuItem_Click);
-            // 
-            // zamknijToolStripMenuItem
-            // 
-            this.zamknijToolStripMenuItem.Name = "zamknijToolStripMenuItem";
-            this.zamknijToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.zamknijToolStripMenuItem.Text = "Zamknij";
-            this.zamknijToolStripMenuItem.Click += new System.EventHandler(this.zamknijToolStripMenuItem_Click);
             // 
             // logIn
             // 
@@ -151,6 +151,7 @@
             this.MinimumSize = new System.Drawing.Size(304, 339);
             this.Name = "logIn";
             this.Text = "Zaloguj się na serwer";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.logIn_FormClosing);
             this.menuMain.ResumeLayout(false);
             this.menuMain.PerformLayout();
             this.ResumeLayout(false);

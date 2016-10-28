@@ -80,7 +80,7 @@ namespace CSS_database_connection_tries
 
         private void liczenieToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             addingDatasToCount adtc = new addingDatasToCount();
             adtc.Show();
         }
@@ -93,6 +93,11 @@ namespace CSS_database_connection_tries
         private void pomocToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void logIn_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

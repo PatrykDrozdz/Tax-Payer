@@ -59,6 +59,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Result";
             this.Text = "Wynik";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Result_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

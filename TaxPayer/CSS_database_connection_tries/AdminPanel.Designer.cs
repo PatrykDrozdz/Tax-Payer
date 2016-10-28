@@ -51,13 +51,16 @@
             this.refreshButton = new System.Windows.Forms.Button();
             this.info_label = new System.Windows.Forms.Label();
             this.Reactive = new System.Windows.Forms.Button();
+            this.addAdmin_button = new System.Windows.Forms.Button();
+            this.administratcjaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dodajAdministratoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.showAllDatas)).BeginInit();
             this.SuspendLayout();
             // 
             // logOut
             // 
-            this.logOut.Location = new System.Drawing.Point(868, 32);
+            this.logOut.Location = new System.Drawing.Point(868, 52);
             this.logOut.Name = "logOut";
             this.logOut.Size = new System.Drawing.Size(99, 44);
             this.logOut.TabIndex = 10;
@@ -67,17 +70,17 @@
             // 
             // addOpen
             // 
-            this.addOpen.Location = new System.Drawing.Point(868, 98);
+            this.addOpen.Location = new System.Drawing.Point(868, 102);
             this.addOpen.Name = "addOpen";
             this.addOpen.Size = new System.Drawing.Size(99, 44);
             this.addOpen.TabIndex = 13;
-            this.addOpen.Text = "dodaj stawkę";
+            this.addOpen.Text = "Dodaj stawkę";
             this.addOpen.UseVisualStyleBackColor = true;
             this.addOpen.Click += new System.EventHandler(this.addOpen_Click);
             // 
             // addDeleteOpen
             // 
-            this.addDeleteOpen.Location = new System.Drawing.Point(868, 164);
+            this.addDeleteOpen.Location = new System.Drawing.Point(868, 152);
             this.addDeleteOpen.Name = "addDeleteOpen";
             this.addDeleteOpen.Size = new System.Drawing.Size(99, 55);
             this.addDeleteOpen.TabIndex = 14;
@@ -87,7 +90,7 @@
             // 
             // taxFreeOpen
             // 
-            this.taxFreeOpen.Location = new System.Drawing.Point(868, 239);
+            this.taxFreeOpen.Location = new System.Drawing.Point(868, 213);
             this.taxFreeOpen.Name = "taxFreeOpen";
             this.taxFreeOpen.Size = new System.Drawing.Size(99, 60);
             this.taxFreeOpen.TabIndex = 15;
@@ -100,7 +103,8 @@
             this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuToolStripMenuItem,
             this.helpToolStripMenuItem,
-            this.operacjeToolStripMenuItem});
+            this.operacjeToolStripMenuItem,
+            this.administratcjaToolStripMenuItem});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
             this.mainMenu.Size = new System.Drawing.Size(979, 24);
@@ -158,7 +162,7 @@
             // dodajStawkęToolStripMenuItem
             // 
             this.dodajStawkęToolStripMenuItem.Name = "dodajStawkęToolStripMenuItem";
-            this.dodajStawkęToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dodajStawkęToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.dodajStawkęToolStripMenuItem.Text = "Dodaj stawkę";
             this.dodajStawkęToolStripMenuItem.Click += new System.EventHandler(this.dodajStawkęToolStripMenuItem_Click);
             // 
@@ -168,7 +172,7 @@
             this.stawkęPodatkuToolStripMenuItem,
             this.kwoteWolnaToolStripMenuItem});
             this.edytujToolStripMenuItem.Name = "edytujToolStripMenuItem";
-            this.edytujToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.edytujToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.edytujToolStripMenuItem.Text = "Edytuj";
             // 
             // stawkęPodatkuToolStripMenuItem
@@ -188,14 +192,14 @@
             // odświeżToolStripMenuItem
             // 
             this.odświeżToolStripMenuItem.Name = "odświeżToolStripMenuItem";
-            this.odświeżToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.odświeżToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.odświeżToolStripMenuItem.Text = "Odśwież";
             this.odświeżToolStripMenuItem.Click += new System.EventHandler(this.odświeżToolStripMenuItem_Click);
             // 
             // akktywójPrógToolStripMenuItem
             // 
             this.akktywójPrógToolStripMenuItem.Name = "akktywójPrógToolStripMenuItem";
-            this.akktywójPrógToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.akktywójPrógToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.akktywójPrógToolStripMenuItem.Text = "Akktywuj próg";
             this.akktywójPrógToolStripMenuItem.Click += new System.EventHandler(this.akktywujPrógToolStripMenuItem_Click);
             // 
@@ -204,13 +208,13 @@
             this.showAllDatas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.showAllDatas.Location = new System.Drawing.Point(12, 52);
             this.showAllDatas.Name = "showAllDatas";
-            this.showAllDatas.Size = new System.Drawing.Size(822, 383);
+            this.showAllDatas.Size = new System.Drawing.Size(822, 358);
             this.showAllDatas.TabIndex = 17;
             // 
             // freePayLabel
             // 
             this.freePayLabel.AutoSize = true;
-            this.freePayLabel.Location = new System.Drawing.Point(12, 448);
+            this.freePayLabel.Location = new System.Drawing.Point(12, 445);
             this.freePayLabel.Name = "freePayLabel";
             this.freePayLabel.Size = new System.Drawing.Size(128, 13);
             this.freePayLabel.TabIndex = 18;
@@ -219,7 +223,7 @@
             // freePayShow
             // 
             this.freePayShow.AutoSize = true;
-            this.freePayShow.Location = new System.Drawing.Point(146, 448);
+            this.freePayShow.Location = new System.Drawing.Point(146, 445);
             this.freePayShow.Name = "freePayShow";
             this.freePayShow.Size = new System.Drawing.Size(10, 13);
             this.freePayShow.TabIndex = 19;
@@ -227,9 +231,9 @@
             // 
             // refreshButton
             // 
-            this.refreshButton.Location = new System.Drawing.Point(868, 313);
+            this.refreshButton.Location = new System.Drawing.Point(868, 279);
             this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(99, 44);
+            this.refreshButton.Size = new System.Drawing.Size(99, 33);
             this.refreshButton.TabIndex = 20;
             this.refreshButton.Text = "Odśwież";
             this.refreshButton.UseVisualStyleBackColor = true;
@@ -246,7 +250,7 @@
             // 
             // Reactive
             // 
-            this.Reactive.Location = new System.Drawing.Point(868, 391);
+            this.Reactive.Location = new System.Drawing.Point(868, 318);
             this.Reactive.Name = "Reactive";
             this.Reactive.Size = new System.Drawing.Size(99, 44);
             this.Reactive.TabIndex = 22;
@@ -254,11 +258,37 @@
             this.Reactive.UseVisualStyleBackColor = true;
             this.Reactive.Click += new System.EventHandler(this.Reactive_Click);
             // 
+            // addAdmin_button
+            // 
+            this.addAdmin_button.Location = new System.Drawing.Point(868, 368);
+            this.addAdmin_button.Name = "addAdmin_button";
+            this.addAdmin_button.Size = new System.Drawing.Size(99, 42);
+            this.addAdmin_button.TabIndex = 23;
+            this.addAdmin_button.Text = "Dodaj administratora";
+            this.addAdmin_button.UseVisualStyleBackColor = true;
+            this.addAdmin_button.Click += new System.EventHandler(this.addAdmin_button_Click);
+            // 
+            // administratcjaToolStripMenuItem
+            // 
+            this.administratcjaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dodajAdministratoraToolStripMenuItem});
+            this.administratcjaToolStripMenuItem.Name = "administratcjaToolStripMenuItem";
+            this.administratcjaToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
+            this.administratcjaToolStripMenuItem.Text = "Administratcja";
+            // 
+            // dodajAdministratoraToolStripMenuItem
+            // 
+            this.dodajAdministratoraToolStripMenuItem.Name = "dodajAdministratoraToolStripMenuItem";
+            this.dodajAdministratoraToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.dodajAdministratoraToolStripMenuItem.Text = "Dodaj administratora";
+            this.dodajAdministratoraToolStripMenuItem.Click += new System.EventHandler(this.dodajAdministratoraToolStripMenuItem_Click);
+            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(979, 502);
+            this.Controls.Add(this.addAdmin_button);
             this.Controls.Add(this.Reactive);
             this.Controls.Add(this.info_label);
             this.Controls.Add(this.refreshButton);
@@ -277,6 +307,7 @@
             this.MinimumSize = new System.Drawing.Size(995, 540);
             this.Name = "AdminPanel";
             this.Text = "AdminPanel";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminPanel_FormClosing);
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.showAllDatas)).EndInit();
@@ -309,5 +340,8 @@
         private System.Windows.Forms.Label info_label;
         private System.Windows.Forms.Button Reactive;
         private System.Windows.Forms.ToolStripMenuItem akktywójPrógToolStripMenuItem;
+        private System.Windows.Forms.Button addAdmin_button;
+        private System.Windows.Forms.ToolStripMenuItem administratcjaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dodajAdministratoraToolStripMenuItem;
     }
 }

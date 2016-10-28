@@ -72,5 +72,10 @@ namespace CSS_database_connection_tries
 
             r.ShowDialog();
         }
+
+        private void addingDatasToCount_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

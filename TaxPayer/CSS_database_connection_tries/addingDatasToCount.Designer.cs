@@ -207,6 +207,7 @@
             this.MinimumSize = new System.Drawing.Size(442, 383);
             this.Name = "addingDatasToCount";
             this.Text = "Sprawdź swoje podatki";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.addingDatasToCount_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.incommeUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.outcommeSocialUpDown)).EndInit();
             this.menuMain.ResumeLayout(false);

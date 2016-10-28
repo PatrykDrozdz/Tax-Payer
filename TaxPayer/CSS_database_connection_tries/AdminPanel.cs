@@ -24,10 +24,10 @@ namespace CSS_database_connection_tries
         {
 
             string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
-            string selsectQuery = "SELECT * FROM taxpayer.freetaxvalue;";
+            string selectQuery = "SELECT * FROM taxpayer.freetaxvalue;";
 
             MySqlConnection conn = new MySqlConnection(connDetail);
-            MySqlCommand command = new MySqlCommand(selsectQuery, conn);
+            MySqlCommand command = new MySqlCommand(selectQuery, conn);
 
             MySqlDataReader queryReader;
 
@@ -58,10 +58,10 @@ namespace CSS_database_connection_tries
         {
 
             string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
-            string selsectQuery = "SELECT * FROM taxpayer.taxes;";
+            string selectQuery = "SELECT * FROM taxpayer.taxes;";
 
             MySqlConnection conn = new MySqlConnection(connDetail);
-            MySqlCommand command = new MySqlCommand(selsectQuery, conn);
+            MySqlCommand command = new MySqlCommand(selectQuery, conn);
 
             try
             {
@@ -174,6 +174,24 @@ namespace CSS_database_connection_tries
             Reactive reac = new Reactive();
 
             reac.ShowDialog();
+        }
+
+        private void AdminPanel_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void addAdmin_button_Click(object sender, EventArgs e)
+        {
+            addAdmin addAdmin = new addAdmin();
+            addAdmin.ShowDialog();
+
+        }
+
+        private void dodajAdministratoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            addAdmin addAdmin = new addAdmin();
+            addAdmin.ShowDialog();
         }
     }
 }
