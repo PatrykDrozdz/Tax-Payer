@@ -14,7 +14,7 @@ namespace CSS_database_connection_tries
     public partial class Result : Form 
     {
         addingDatasToCount add;
-        int count = 0;
+        int countValues = 0;
 
         public Result(addingDatasToCount add)
         {
@@ -25,9 +25,6 @@ namespace CSS_database_connection_tries
 
         void counting()
         {
-
-            //label1.Text = add.getIncomme().ToString();
-            //label2.Text = add.getOutcomme().ToString();
 
             string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
             string selectQuery = "SELECT * FROM taxpayer.taxes WHERE flagT=1;";
@@ -44,11 +41,11 @@ namespace CSS_database_connection_tries
                 queryReader = command.ExecuteReader();
 
                 while (queryReader.Read())
-                {
-                    string ids = queryReader.GetString("idtaxes");
-                    //idCombo.Items.Add(ids);
-                    label1.Text = ids;
+                {    
+                    countValues++;
                 }
+
+                taxValueCount.Text = countValues.ToString();
 
             }
             catch (Exception ex)
@@ -61,7 +58,7 @@ namespace CSS_database_connection_tries
 
         private void Result_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            
         }
     }
 }

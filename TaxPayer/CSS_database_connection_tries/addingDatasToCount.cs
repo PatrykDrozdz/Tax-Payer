@@ -21,16 +21,22 @@ namespace CSS_database_connection_tries
         }
 
         private double incomme;
-        private double outcomme;
+        private double outcommeHealth;
+        private double outcommeSocial;
 
         private void setIncomme(double value)
         {
             this.incomme = value;
         }
 
-        private void setOutcomme(double value)
+        private void setOutcommeHealth(double value)
         {
-            this.outcomme = value;
+            this.outcommeHealth = value;
+        }
+
+        private void setOutcommeSocial(double value)
+        {
+            this.outcommeSocial = value;
         }
 
         public double getIncomme()
@@ -38,9 +44,14 @@ namespace CSS_database_connection_tries
             return this.incomme;
         }
 
-        public double getOutcomme()
+        public double getOutcommeHealth()
         {
-            return this.outcomme;
+            return this.outcommeHealth;
+        }
+
+        public double getOutcommeSocial()
+        {
+            return this.outcommeSocial;
         }
 
         private void zalogujSięToolStripMenuItem_Click(object sender, EventArgs e)
@@ -64,8 +75,9 @@ namespace CSS_database_connection_tries
         {
             this.setIncomme((double)this.incommeUpDown.Value);
 
-            this.setOutcomme((double)this.outcommeSocialUpDown.Value);
+            this.setOutcommeSocial((double)this.outcommeSocialUpDown.Value);
 
+            this.setOutcommeHealth((double)this.outcommeHealthUpDown.Value);
 
             Result r = new Result(this);
             r.Owner = this;

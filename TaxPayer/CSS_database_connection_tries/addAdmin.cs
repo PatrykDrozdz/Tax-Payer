@@ -19,13 +19,17 @@ namespace CSS_database_connection_tries
             passTxt.PasswordChar = '*';
         }
 
+        private int checkLogin = 0;
+
         private void addAdministrator_Click(object sender, EventArgs e)
         {
             string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
             string selectQuery = "SELECT * FROM taxpayer.admins;";
+            string insertQuery = "INSERT INTO taxpayer.admins(idadmins, login, password) VALUES(NULL, '"+this.logTxt.Text+"', '"+this.passTxt.Text+"');";
 
             MySqlConnection conn = new MySqlConnection(connDetail);
             MySqlCommand command = new MySqlCommand(selectQuery, conn);
+            MySqlCommand command2 = new MySqlCommand(insertQuery, conn);
 
             MySqlDataReader queryReader;
 
@@ -43,15 +47,30 @@ namespace CSS_database_connection_tries
 
                     if (login == logTxt.Text)
                     {
-                        MessageBox.Show("Administrator o tym loginie już istnieje!");
+                        checkLogin++;
                     }
-                    else {
-                        MessageBox.Show("OK!");
-                    }
-
+                    
 
                 }
 
+                conn.Close();
+
+                if (checkLogin > 0)
+                {
+                    MessageBox.Show("Administrator o tym loginie już istnieje!");
+                }
+                else
+                {
+
+                    conn.Open();
+                    command2.ExecuteReader();
+                    MessageBox.Show("Administrator dodany!");
+                    this.Close();
+                }
+
+                checkLogin = 0;
+
+                conn.Close();
             }
             catch (Exception ex)
             {

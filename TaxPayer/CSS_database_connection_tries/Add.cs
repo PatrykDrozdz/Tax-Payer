@@ -51,7 +51,7 @@ namespace CSS_database_connection_tries
                 conn.Open();
 
                 queryReader = command.ExecuteReader();
-                MessageBox.Show("dane zapisane do bazy!");
+                MessageBox.Show("Dane zapisane do bazy!");
                 this.Close();
 
 
