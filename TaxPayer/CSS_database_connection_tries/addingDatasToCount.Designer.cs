@@ -62,7 +62,7 @@
             this.openChecking.Name = "openChecking";
             this.openChecking.Size = new System.Drawing.Size(120, 46);
             this.openChecking.TabIndex = 1;
-            this.openChecking.Text = "Sprawdź";
+            this.openChecking.Text = "Oblicz";
             this.openChecking.UseVisualStyleBackColor = true;
             this.openChecking.Click += new System.EventHandler(this.openChecking_Click);
             // 
@@ -150,13 +150,13 @@
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pomocToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.helpToolStripMenuItem.Text = "Pomoc";
             // 
             // pomocToolStripMenuItem
             // 
             this.pomocToolStripMenuItem.Name = "pomocToolStripMenuItem";
-            this.pomocToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.pomocToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.pomocToolStripMenuItem.Text = "Pomoc";
             this.pomocToolStripMenuItem.Click += new System.EventHandler(this.pomocToolStripMenuItem_Click);
             // 

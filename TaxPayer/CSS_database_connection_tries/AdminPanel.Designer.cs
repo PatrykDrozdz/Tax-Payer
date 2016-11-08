@@ -45,6 +45,8 @@
             this.kwoteWolnaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.odświeżToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.akktywójPrógToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.administratcjaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dodajAdministratoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showAllDatas = new System.Windows.Forms.DataGridView();
             this.freePayLabel = new System.Windows.Forms.Label();
             this.freePayShow = new System.Windows.Forms.Label();
@@ -52,8 +54,6 @@
             this.info_label = new System.Windows.Forms.Label();
             this.Reactive = new System.Windows.Forms.Button();
             this.addAdmin_button = new System.Windows.Forms.Button();
-            this.administratcjaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dodajAdministratoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.showAllDatas)).BeginInit();
             this.SuspendLayout();
@@ -119,18 +119,19 @@
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.menuToolStripMenuItem.Text = "Menu";
+            this.menuToolStripMenuItem.Click += new System.EventHandler(this.menuToolStripMenuItem_Click);
             // 
             // wylogujSięToolStripMenuItem
             // 
             this.wylogujSięToolStripMenuItem.Name = "wylogujSięToolStripMenuItem";
-            this.wylogujSięToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.wylogujSięToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.wylogujSięToolStripMenuItem.Text = "Wyloguj się";
             this.wylogujSięToolStripMenuItem.Click += new System.EventHandler(this.wylogujSięToolStripMenuItem_Click);
             // 
             // zamknijToolStripMenuItem
             // 
             this.zamknijToolStripMenuItem.Name = "zamknijToolStripMenuItem";
-            this.zamknijToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.zamknijToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.zamknijToolStripMenuItem.Text = "Zamknij";
             this.zamknijToolStripMenuItem.Click += new System.EventHandler(this.zamknijToolStripMenuItem_Click);
             // 
@@ -139,8 +140,8 @@
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pomocToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.helpToolStripMenuItem.Text = "Pomoc";
             // 
             // pomocToolStripMenuItem
             // 
@@ -203,6 +204,21 @@
             this.akktywójPrógToolStripMenuItem.Text = "Akktywuj próg";
             this.akktywójPrógToolStripMenuItem.Click += new System.EventHandler(this.akktywujPrógToolStripMenuItem_Click);
             // 
+            // administratcjaToolStripMenuItem
+            // 
+            this.administratcjaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dodajAdministratoraToolStripMenuItem});
+            this.administratcjaToolStripMenuItem.Name = "administratcjaToolStripMenuItem";
+            this.administratcjaToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
+            this.administratcjaToolStripMenuItem.Text = "Administratcja";
+            // 
+            // dodajAdministratoraToolStripMenuItem
+            // 
+            this.dodajAdministratoraToolStripMenuItem.Name = "dodajAdministratoraToolStripMenuItem";
+            this.dodajAdministratoraToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.dodajAdministratoraToolStripMenuItem.Text = "Dodaj administratora";
+            this.dodajAdministratoraToolStripMenuItem.Click += new System.EventHandler(this.dodajAdministratoraToolStripMenuItem_Click);
+            // 
             // showAllDatas
             // 
             this.showAllDatas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -244,9 +260,9 @@
             this.info_label.AutoSize = true;
             this.info_label.Location = new System.Drawing.Point(12, 33);
             this.info_label.Name = "info_label";
-            this.info_label.Size = new System.Drawing.Size(162, 13);
+            this.info_label.Size = new System.Drawing.Size(288, 13);
             this.info_label.TabIndex = 21;
-            this.info_label.Text = "Flagi: 0 - nieaktywne, 1 -aktywne";
+            this.info_label.Text = "Flagi(FlagT / flagFreePayment): 0 - nieaktywne, 1 - aktywne";
             // 
             // Reactive
             // 
@@ -267,21 +283,6 @@
             this.addAdmin_button.Text = "Dodaj administratora";
             this.addAdmin_button.UseVisualStyleBackColor = true;
             this.addAdmin_button.Click += new System.EventHandler(this.addAdmin_button_Click);
-            // 
-            // administratcjaToolStripMenuItem
-            // 
-            this.administratcjaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dodajAdministratoraToolStripMenuItem});
-            this.administratcjaToolStripMenuItem.Name = "administratcjaToolStripMenuItem";
-            this.administratcjaToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
-            this.administratcjaToolStripMenuItem.Text = "Administratcja";
-            // 
-            // dodajAdministratoraToolStripMenuItem
-            // 
-            this.dodajAdministratoraToolStripMenuItem.Name = "dodajAdministratoraToolStripMenuItem";
-            this.dodajAdministratoraToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.dodajAdministratoraToolStripMenuItem.Text = "Dodaj administratora";
-            this.dodajAdministratoraToolStripMenuItem.Click += new System.EventHandler(this.dodajAdministratoraToolStripMenuItem_Click);
             // 
             // AdminPanel
             // 

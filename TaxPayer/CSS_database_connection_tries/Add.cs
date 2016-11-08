@@ -18,6 +18,8 @@ namespace CSS_database_connection_tries
             InitializeComponent();
         }
 
+        private string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
+        private string insertQuery;
         private int flagFreePayment = 1;
 
         private void logOut_Click(object sender, EventArgs e)
@@ -37,16 +39,15 @@ namespace CSS_database_connection_tries
             {
                 flagFreePayment = 0;
             }
-           
 
-            string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
-            string insertQuery = "INSERT INTO taxpayer.taxes (idtaxes, value, guaranteedAmount, downPayment, maxPayment, flagFreePayment, contents, flagT) VALUES (NULL, '"+this.valueUpDown.Value+"','"+this.guaranteedAmountUpDown.Value+"', '"+this.downPaymentUpDown.Value+"', '"+this.maxPaymentUpDown.Value+"', '"+this.flagFreePayment+"','"+this.contentsText.Text+"', '1');";
+            insertQuery = "INSERT INTO taxpayer.taxes (idtaxes, value, guaranteedAmount, downPayment, maxPayment, flagFreePayment, contents, flagT) VALUES (NULL, '" + this.valueUpDown.Value + "','" + this.guaranteedAmountUpDown.Value + "', '" + this.downPaymentUpDown.Value + "', '" + this.maxPaymentUpDown.Value + "', '" + this.flagFreePayment + "','" + this.contentsText.Text + "', '1');";
 
             MySqlConnection conn = new MySqlConnection(connDetail);
             MySqlCommand command = new MySqlCommand(insertQuery, conn);
 
             MySqlDataReader queryReader;
-            
+
+
             try {
                 conn.Open();
 

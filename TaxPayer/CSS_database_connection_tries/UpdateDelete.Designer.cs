@@ -331,7 +331,7 @@
             this.taxFreePaymentLabel.Name = "taxFreePaymentLabel";
             this.taxFreePaymentLabel.Size = new System.Drawing.Size(131, 13);
             this.taxFreePaymentLabel.TabIndex = 27;
-            this.taxFreePaymentLabel.Text = "Kwota owlna od podatku: ";
+            this.taxFreePaymentLabel.Text = "Kwota wolna od podatku: ";
             // 
             // labelForTaxFreePaymentInfo
             // 

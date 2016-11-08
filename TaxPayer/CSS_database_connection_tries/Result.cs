@@ -13,8 +13,16 @@ namespace CSS_database_connection_tries
 {
     public partial class Result : Form 
     {
+
+        private string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
+        private string selectQuery;
+        private int countValues = 0;
+        private double[] ResultValueTab;
         addingDatasToCount add;
-        int countValues = 0;
+        MySqlConnection conn;
+        MySqlCommand command;
+
+        MySqlDataReader queryReader;
 
         public Result(addingDatasToCount add)
         {
@@ -23,16 +31,42 @@ namespace CSS_database_connection_tries
             counting();
         }
 
+        void getTaxFreePayment()
+        {
+
+            selectQuery = "SELECT * FROM taxpayer.freetaxvalue;";
+
+            conn = new MySqlConnection(connDetail);
+            command = new MySqlCommand(selectQuery, conn);
+
+            try
+            {
+                conn.Open();
+
+                queryReader = command.ExecuteReader();
+
+                while (queryReader.Read())
+                {
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+
         void counting()
         {
 
-            string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
-            string selectQuery = "SELECT * FROM taxpayer.taxes WHERE flagT=1;";
+            selectQuery = "SELECT * FROM taxpayer.taxes WHERE flagT=1;";
 
-            MySqlConnection conn = new MySqlConnection(connDetail);
-            MySqlCommand command = new MySqlCommand(selectQuery, conn);
-
-            MySqlDataReader queryReader;
+            conn = new MySqlConnection(connDetail);
+            command = new MySqlCommand(selectQuery, conn);
 
             try
             {
@@ -45,14 +79,20 @@ namespace CSS_database_connection_tries
                     countValues++;
                 }
 
-                taxValueCount.Text = countValues.ToString();
+                this.ResultValueTab = new double[this.countValues];
+
+               /* this.Values[0] = countValues;
+                this.Values[1] = add.getIncomme();
+
+                 taxValueCount.Text = this.Values[0].ToString();
+                 taxValue.Text = this.Values[1].ToString();
+                 */
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
 
         }
 

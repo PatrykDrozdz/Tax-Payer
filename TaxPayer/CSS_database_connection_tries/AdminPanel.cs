@@ -20,16 +20,32 @@ namespace CSS_database_connection_tries
             getDatas();
         }
 
+        private string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
+        private string selectQuery;
+        private string freePayTax;
+
+        addAdmin addAdmin = new addAdmin();
+        Reactive reac = new Reactive();
+        UpdateDelete updel = new UpdateDelete();
+        TaxFreePayEdit tfpe = new TaxFreePayEdit();
+        Add adDel = new Add();
+        logIn main = new logIn();
+        MySqlConnection conn;
+        MySqlCommand command;
+        MySqlDataReader queryReader;
+        BindingSource bSource = new BindingSource();
+        MySqlDataAdapter adaptData = new MySqlDataAdapter();
+        DataTable dbDatas = new DataTable();
+        
         void getFreeTaxPayment()
         {
 
-            string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
-            string selectQuery = "SELECT * FROM taxpayer.freetaxvalue;";
+            
+            selectQuery = "SELECT * FROM taxpayer.freetaxvalue;";
 
-            MySqlConnection conn = new MySqlConnection(connDetail);
-            MySqlCommand command = new MySqlCommand(selectQuery, conn);
+            conn = new MySqlConnection(connDetail);
+            command = new MySqlCommand(selectQuery, conn);
 
-            MySqlDataReader queryReader;
 
             try
             {
@@ -41,7 +57,7 @@ namespace CSS_database_connection_tries
                 while (queryReader.Read())
                 {
 
-                    string freePayTax = queryReader.GetString("freePay");
+                    freePayTax = queryReader.GetString("freePay");
 
                     freePayShow.Text = freePayTax;
                 }
@@ -57,21 +73,16 @@ namespace CSS_database_connection_tries
         void getDatas()
         {
 
-            string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
-            string selectQuery = "SELECT * FROM taxpayer.taxes;";
+            selectQuery = "SELECT * FROM taxpayer.taxes;";
 
-            MySqlConnection conn = new MySqlConnection(connDetail);
-            MySqlCommand command = new MySqlCommand(selectQuery, conn);
+            conn = new MySqlConnection(connDetail);
+            command = new MySqlCommand(selectQuery, conn);
 
             try
             {
 
-                MySqlDataAdapter adaptData = new MySqlDataAdapter();
                 adaptData.SelectCommand = command;
-                DataTable dbDatas = new DataTable();
                 adaptData.Fill(dbDatas);
-
-                BindingSource bSource = new BindingSource();
 
                 bSource.DataSource = dbDatas;
                 showAllDatas.DataSource = bSource;
@@ -86,8 +97,6 @@ namespace CSS_database_connection_tries
 
         private void addOpen_Click(object sender, EventArgs e)
         {
-            Add adDel = new Add();
-
             adDel.ShowDialog();
         }
 
@@ -95,22 +104,16 @@ namespace CSS_database_connection_tries
         {
             MessageBox.Show("wylogowany!");
             this.Hide();
-            logIn main = new logIn();
-
             main.Show();
         }
 
         private void addDeleteOpen_Click(object sender, EventArgs e)
         {
-            UpdateDelete updel = new UpdateDelete();
-
             updel.ShowDialog();
         }
 
         private void taxFreeOpen_Click(object sender, EventArgs e)
         {
-            TaxFreePayEdit tfpe = new TaxFreePayEdit();
-
             tfpe.ShowDialog();
         }
 
@@ -118,8 +121,6 @@ namespace CSS_database_connection_tries
         {
             MessageBox.Show("wylogowany!");
             this.Hide();
-            logIn main = new logIn();
-
             main.Show();
         }
 
@@ -130,22 +131,16 @@ namespace CSS_database_connection_tries
 
         private void dodajStawkęToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Add adDel = new Add();
-
             adDel.ShowDialog();
         }
 
         private void kwoteWolnaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TaxFreePayEdit tfpe = new TaxFreePayEdit();
-
             tfpe.ShowDialog();
         }
 
         private void stawkęPodatkuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UpdateDelete updel = new UpdateDelete();
-
             updel.ShowDialog();
         }
 
@@ -163,16 +158,11 @@ namespace CSS_database_connection_tries
 
         private void Reactive_Click(object sender, EventArgs e)
         {
-            Reactive reac = new Reactive();
-
             reac.ShowDialog();
-
         }
 
         private void akktywujPrógToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Reactive reac = new Reactive();
-
             reac.ShowDialog();
         }
 
@@ -183,15 +173,17 @@ namespace CSS_database_connection_tries
 
         private void addAdmin_button_Click(object sender, EventArgs e)
         {
-            addAdmin addAdmin = new addAdmin();
             addAdmin.ShowDialog();
-
         }
 
         private void dodajAdministratoraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            addAdmin addAdmin = new addAdmin();
             addAdmin.ShowDialog();
+        }
+
+        private void menuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

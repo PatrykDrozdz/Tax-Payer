@@ -17,20 +17,22 @@ namespace CSS_database_connection_tries
         {
             InitializeComponent();
             pass_text.PasswordChar = '*';
-            
-
         }
+
+        private string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
+        MySqlDataReader dataReader;
+        AdminPanel formAdmin = new AdminPanel();
+        Add f2 = new Add();
+        addingDatasToCount adtc = new addingDatasToCount();
 
         private void connect_db_Click(object sender, EventArgs e)
         {
             try {
 
-                string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
                 MySqlConnection conn = new MySqlConnection(connDetail);
 
                 MySqlCommand SelectComm = new MySqlCommand("SELECT * FROM taxpayer.admins WHERE login = '" + this.log_text.Text + "' AND password = '" + this.pass_text.Text + "';", conn);
 
-                MySqlDataReader dataReader;
                 conn.Open();
 
                 dataReader = SelectComm.ExecuteReader();
@@ -40,7 +42,6 @@ namespace CSS_database_connection_tries
                 while (dataReader.Read())
                 {
                     userCount = userCount + 1;
-
                 }
 
 
@@ -48,10 +49,8 @@ namespace CSS_database_connection_tries
                 {
                     MessageBox.Show("admin zalogowany!");
                     this.Hide();
-                    AdminPanel formAdmin = new AdminPanel();
 
                     formAdmin.Show();
-
 
                 }
                 else if (userCount > 1)
@@ -72,7 +71,6 @@ namespace CSS_database_connection_tries
         private void closeForms_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Aplikacja zamknięta");
-            Add f2 = new Add();
             this.Close();
             f2.Close();
             
@@ -81,7 +79,6 @@ namespace CSS_database_connection_tries
         private void liczenieToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            addingDatasToCount adtc = new addingDatasToCount();
             adtc.Show();
         }
 

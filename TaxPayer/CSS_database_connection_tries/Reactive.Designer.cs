@@ -48,7 +48,7 @@
             // labelForTaxFreePaymentInfo
             // 
             this.labelForTaxFreePaymentInfo.AutoSize = true;
-            this.labelForTaxFreePaymentInfo.Location = new System.Drawing.Point(208, 194);
+            this.labelForTaxFreePaymentInfo.Location = new System.Drawing.Point(188, 197);
             this.labelForTaxFreePaymentInfo.Name = "labelForTaxFreePaymentInfo";
             this.labelForTaxFreePaymentInfo.Size = new System.Drawing.Size(10, 13);
             this.labelForTaxFreePaymentInfo.TabIndex = 40;
@@ -57,11 +57,11 @@
             // taxFreePaymentLabel
             // 
             this.taxFreePaymentLabel.AutoSize = true;
-            this.taxFreePaymentLabel.Location = new System.Drawing.Point(208, 162);
+            this.taxFreePaymentLabel.Location = new System.Drawing.Point(183, 162);
             this.taxFreePaymentLabel.Name = "taxFreePaymentLabel";
             this.taxFreePaymentLabel.Size = new System.Drawing.Size(131, 13);
             this.taxFreePaymentLabel.TabIndex = 39;
-            this.taxFreePaymentLabel.Text = "Kwota owlna od podatku: ";
+            this.taxFreePaymentLabel.Text = "Kwota wolna od podatku: ";
             // 
             // guaranteedAmountLabel2
             // 
@@ -75,7 +75,7 @@
             // labelForGuaranteedAmount
             // 
             this.labelForGuaranteedAmount.AutoSize = true;
-            this.labelForGuaranteedAmount.Location = new System.Drawing.Point(42, 194);
+            this.labelForGuaranteedAmount.Location = new System.Drawing.Point(42, 197);
             this.labelForGuaranteedAmount.Name = "labelForGuaranteedAmount";
             this.labelForGuaranteedAmount.Size = new System.Drawing.Size(10, 13);
             this.labelForGuaranteedAmount.TabIndex = 37;
@@ -84,7 +84,7 @@
             // downPaymentLabel2
             // 
             this.downPaymentLabel2.AutoSize = true;
-            this.downPaymentLabel2.Location = new System.Drawing.Point(203, 54);
+            this.downPaymentLabel2.Location = new System.Drawing.Point(183, 57);
             this.downPaymentLabel2.Name = "downPaymentLabel2";
             this.downPaymentLabel2.Size = new System.Drawing.Size(196, 13);
             this.downPaymentLabel2.TabIndex = 36;
@@ -93,7 +93,7 @@
             // labelForDownPayment
             // 
             this.labelForDownPayment.AutoSize = true;
-            this.labelForDownPayment.Location = new System.Drawing.Point(208, 88);
+            this.labelForDownPayment.Location = new System.Drawing.Point(188, 80);
             this.labelForDownPayment.Name = "labelForDownPayment";
             this.labelForDownPayment.Size = new System.Drawing.Size(10, 13);
             this.labelForDownPayment.TabIndex = 35;
@@ -102,7 +102,7 @@
             // contentsTextLabel
             // 
             this.contentsTextLabel.AutoSize = true;
-            this.contentsTextLabel.Location = new System.Drawing.Point(47, 244);
+            this.contentsTextLabel.Location = new System.Drawing.Point(42, 256);
             this.contentsTextLabel.Name = "contentsTextLabel";
             this.contentsTextLabel.Size = new System.Drawing.Size(10, 13);
             this.contentsTextLabel.TabIndex = 34;
@@ -111,7 +111,7 @@
             // contentsLabel2
             // 
             this.contentsLabel2.AutoSize = true;
-            this.contentsLabel2.Location = new System.Drawing.Point(42, 222);
+            this.contentsLabel2.Location = new System.Drawing.Point(37, 227);
             this.contentsLabel2.Name = "contentsLabel2";
             this.contentsLabel2.Size = new System.Drawing.Size(70, 13);
             this.contentsLabel2.TabIndex = 33;
@@ -120,7 +120,7 @@
             // maxPayment2
             // 
             this.maxPayment2.AutoSize = true;
-            this.maxPayment2.Location = new System.Drawing.Point(203, 104);
+            this.maxPayment2.Location = new System.Drawing.Point(183, 104);
             this.maxPayment2.Name = "maxPayment2";
             this.maxPayment2.Size = new System.Drawing.Size(208, 13);
             this.maxPayment2.TabIndex = 32;
@@ -138,7 +138,7 @@
             // labelForMaxPayment
             // 
             this.labelForMaxPayment.AutoSize = true;
-            this.labelForMaxPayment.Location = new System.Drawing.Point(208, 140);
+            this.labelForMaxPayment.Location = new System.Drawing.Point(188, 143);
             this.labelForMaxPayment.Name = "labelForMaxPayment";
             this.labelForMaxPayment.Size = new System.Drawing.Size(10, 13);
             this.labelForMaxPayment.TabIndex = 30;

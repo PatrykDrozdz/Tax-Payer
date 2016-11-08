@@ -17,9 +17,10 @@ namespace CSS_database_connection_tries
         {
             InitializeComponent();
             
-
         }
 
+        Result r;
+        logIn logIn = new logIn();
         private double incomme;
         private double outcommeHealth;
         private double outcommeSocial;
@@ -57,7 +58,6 @@ namespace CSS_database_connection_tries
         private void zalogujSięToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            logIn logIn = new logIn();
             logIn.Show();
         }
 
@@ -79,7 +79,7 @@ namespace CSS_database_connection_tries
 
             this.setOutcommeHealth((double)this.outcommeHealthUpDown.Value);
 
-            Result r = new Result(this);
+            r = new Result(this);
             r.Owner = this;
 
             r.ShowDialog();

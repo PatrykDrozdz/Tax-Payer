@@ -20,12 +20,14 @@ namespace CSS_database_connection_tries
         }
 
         private int checkLogin = 0;
+        private string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
+        private string selectQuery = "SELECT * FROM taxpayer.admins;";
+        private string insertQuery;
 
         private void addAdministrator_Click(object sender, EventArgs e)
         {
-            string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
-            string selectQuery = "SELECT * FROM taxpayer.admins;";
-            string insertQuery = "INSERT INTO taxpayer.admins(idadmins, login, password) VALUES(NULL, '"+this.logTxt.Text+"', '"+this.passTxt.Text+"');";
+
+            insertQuery = "INSERT INTO taxpayer.admins(idadmins, login, password) VALUES(NULL, '"+this.logTxt.Text+"', '"+this.passTxt.Text+"');";
 
             MySqlConnection conn = new MySqlConnection(connDetail);
             MySqlCommand command = new MySqlCommand(selectQuery, conn);
