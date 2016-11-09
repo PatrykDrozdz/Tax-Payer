@@ -14,15 +14,8 @@ namespace CSS_database_connection_tries
     public partial class Result : Form 
     {
 
-        private string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
-        private string selectQuery;
-        private int countValues = 0;
-        private double[] ResultValueTab;
         addingDatasToCount add;
-        MySqlConnection conn;
-        MySqlCommand command;
-
-        MySqlDataReader queryReader;
+        int countValues = 0;
 
         public Result(addingDatasToCount add)
         {
@@ -34,10 +27,12 @@ namespace CSS_database_connection_tries
         void getTaxFreePayment()
         {
 
-            selectQuery = "SELECT * FROM taxpayer.freetaxvalue;";
-
-            conn = new MySqlConnection(connDetail);
-            command = new MySqlCommand(selectQuery, conn);
+            string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
+			string selectQuery = "SELECT * FROM taxpayer.taxes WHERE flagT=1;";
+			
+			MySqlConnection conn = new MySqlConnection(connDetail);
+            MySqlCommand command = new MySqlCommand(selectQuery, conn);
+			MySqlDataReader queryReader;
 
             try
             {
@@ -63,10 +58,13 @@ namespace CSS_database_connection_tries
         void counting()
         {
 
-            selectQuery = "SELECT * FROM taxpayer.taxes WHERE flagT=1;";
+            string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
+			string selectQuery = "SELECT * FROM taxpayer.taxes WHERE flagT=1;";
+			
+			MySqlConnection conn = new MySqlConnection(connDetail);
+            MySqlCommand command = new MySqlCommand(selectQuery, conn);
+			MySqlDataReader queryReader;
 
-            conn = new MySqlConnection(connDetail);
-            command = new MySqlCommand(selectQuery, conn);
 
             try
             {
@@ -79,7 +77,7 @@ namespace CSS_database_connection_tries
                     countValues++;
                 }
 
-                this.ResultValueTab = new double[this.countValues];
+                //this.ResultValueTab = new double[this.countValues];
 
                /* this.Values[0] = countValues;
                 this.Values[1] = add.getIncomme();

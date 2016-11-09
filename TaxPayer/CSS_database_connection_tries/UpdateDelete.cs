@@ -19,30 +19,21 @@ namespace CSS_database_connection_tries
             fillComboId();
         }
 
-        private string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
-        private string value;
-        private string guaranteedAmount;
-        private string downPayment;
-        private string maxPaymentValue;
-        private string contents;
-        private string selectQuery;
-        private string deleteQuery;
-        private string updateQuery;
-        private string insertQuery;
-        private int getFlagFreePayment;
+
         private int flagFreePayment = 1;
-        MySqlConnection conn;
-        MySqlCommand command;
-        MySqlDataReader queryReader;
+
 
 
         void fillComboId()
         {
             
-            selectQuery = "SELECT * FROM taxpayer.taxes WHERE flagT=1;";
-
-            conn = new MySqlConnection(connDetail);
-            command = new MySqlCommand(selectQuery, conn);
+            string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
+            string selectQuery = "SELECT * FROM taxpayer.taxes WHERE flagT=1;";
+ 
+              
+			MySqlConnection conn = new MySqlConnection(connDetail);
+            MySqlCommand command = new MySqlCommand(selectQuery, conn);
+			MySqlDataReader queryReader;
 
             try
             {
@@ -68,10 +59,12 @@ namespace CSS_database_connection_tries
         private void deleteButton_Click(object sender, EventArgs e)
         {
 
-            deleteQuery = "UPDATE taxpayer.taxes SET flagT='0' WHERE idtaxes='"+idCombo.Text+"' ;";
-
-            conn = new MySqlConnection(connDetail);
-            command = new MySqlCommand(deleteQuery, conn);
+            string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
+            string deleteQuery = "UPDATE taxpayer.taxes SET flagT='0' WHERE idtaxes='"+idCombo.Text+"' ;";
+ 
+              MySqlConnection conn = new MySqlConnection(connDetail);
+              MySqlCommand command = new MySqlCommand(deleteQuery, conn);
+              MySqlDataReader queryReader;
 
             try
             {
@@ -98,10 +91,13 @@ namespace CSS_database_connection_tries
                 this.flagFreePayment = 0;
             }
 
-            updateQuery = "UPDATE taxpayer.taxes SET value='"+valueUpDown.Value+"', guaranteedAmount='"+this.guaranteedAmountUpDown.Value+"', downPayment='"+this.downPaymentUpDown.Value+"', maxPayment='"+maxPaymentUpDown.Value+"', flagFreePayment='"+this.flagFreePayment+"', contents='"+contentsText.Text+"' WHERE idtaxes='" + idCombo.Text + "' ;";
+            string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
+            string updateQuery = "UPDATE taxpayer.taxes SET value='"+valueUpDown.Value+"', guaranteedAmount='"+this.guaranteedAmountUpDown.Value+"', downPayment='"+this.downPaymentUpDown.Value+"', maxPayment='"+maxPaymentUpDown.Value+"', flagFreePayment='"+this.flagFreePayment+"', contents='"+contentsText.Text+"' WHERE idtaxes='" + idCombo.Text + "' ;";
+ 
+            MySqlConnection conn = new MySqlConnection(connDetail);
+            MySqlCommand command = new MySqlCommand(updateQuery, conn);
 
-            conn = new MySqlConnection(connDetail);
-            command = new MySqlCommand(updateQuery, conn);
+            MySqlDataReader queryReader;
 
             try
             {
@@ -123,10 +119,14 @@ namespace CSS_database_connection_tries
         private void idCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            insertQuery = "SELECT * FROM taxpayer.taxes WHERE flagT=1 AND idtaxes='"+idCombo.Text+"';";
+            string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
+            string insertQuery = "SELECT * FROM taxpayer.taxes WHERE flagT=1 AND idtaxes='"+idCombo.Text+"';";
+ 
+             MySqlConnection conn = new MySqlConnection(connDetail);
+             MySqlCommand command = new MySqlCommand(insertQuery, conn);
 
-            conn = new MySqlConnection(connDetail);
-            command = new MySqlCommand(insertQuery, conn);
+  
+             MySqlDataReader queryReader;
 
             try
             {
@@ -136,22 +136,22 @@ namespace CSS_database_connection_tries
 
                 while (queryReader.Read())
                 {
-                    value = queryReader.GetString("value");
-                    guaranteedAmount = queryReader.GetString("guaranteedAmount");
-                    downPayment = queryReader.GetString("downPayment");
-                    maxPaymentValue = queryReader.GetString("maxPayment");
-                    contents = queryReader.GetString("contents");
-                    getFlagFreePayment = queryReader.GetInt32("flagFreePayment");
+                    string value = queryReader.GetString("value");
+                    string guaranteedAmount = queryReader.GetString("guaranteedAmount");
+                     string downPayment = queryReader.GetString("downPayment");
+                     string maxPayment = queryReader.GetString("maxPayment");
+                     string contents = queryReader.GetString("contents");
+                     int flagFreePayment = queryReader.GetInt32("flagFreePayment");
 
                     labelForValue.Text = value;
                     labelForGuaranteedAmount.Text = guaranteedAmount;
                     labelForDownPayment.Text = downPayment;
-                    labelForMaxPayment.Text = maxPaymentValue;
+                    labelForMaxPayment.Text = maxPayment;
                     contentsTextLabel.Text = contents;
 
-                    if (getFlagFreePayment == 0) {
+                    if (flagFreePayment == 0) {
                         this.labelForTaxFreePaymentInfo.Text = "nieobowiązuje";
-                    } else if (getFlagFreePayment == 1)
+                    } else if (flagFreePayment == 1)
                     {
                         this.labelForTaxFreePaymentInfo.Text = "obowiązuje";
                     }

@@ -19,20 +19,19 @@ namespace CSS_database_connection_tries
             pass_text.PasswordChar = '*';
         }
 
-        private string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
-        MySqlDataReader dataReader;
-        AdminPanel formAdmin = new AdminPanel();
-        Add f2 = new Add();
-        addingDatasToCount adtc = new addingDatasToCount();
+
 
         private void connect_db_Click(object sender, EventArgs e)
         {
             try {
-
+				
+				string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
+				
                 MySqlConnection conn = new MySqlConnection(connDetail);
 
                 MySqlCommand SelectComm = new MySqlCommand("SELECT * FROM taxpayer.admins WHERE login = '" + this.log_text.Text + "' AND password = '" + this.pass_text.Text + "';", conn);
-
+				MySqlDataReader dataReader;
+				
                 conn.Open();
 
                 dataReader = SelectComm.ExecuteReader();
@@ -48,6 +47,7 @@ namespace CSS_database_connection_tries
                 if (userCount == 1)
                 {
                     MessageBox.Show("admin zalogowany!");
+					AdminPanel formAdmin = new AdminPanel();
                     this.Hide();
 
                     formAdmin.Show();
@@ -72,6 +72,7 @@ namespace CSS_database_connection_tries
         {
             MessageBox.Show("Aplikacja zamknięta");
             this.Close();
+			Add f2 = new Add();
             f2.Close();
             
         }
@@ -79,6 +80,7 @@ namespace CSS_database_connection_tries
         private void liczenieToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
+			addingDatasToCount adtc = new addingDatasToCount();
             adtc.Show();
         }
 

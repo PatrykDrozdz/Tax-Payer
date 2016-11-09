@@ -47,3 +47,22 @@ D:\programowanie\TaxPayer - repo\TaxPayer\CSS_database_connection_tries\obj\Debu
 D:\programowanie\TaxPayer - repo\TaxPayer\CSS_database_connection_tries\obj\Debug\TaxPayer.csproj.GenerateResource.Cache
 D:\programowanie\TaxPayer - repo\TaxPayer\CSS_database_connection_tries\obj\Debug\CSS_database_connection_tries.Reactive.resources
 D:\programowanie\TaxPayer - repo\TaxPayer\CSS_database_connection_tries\obj\Debug\CSS_database_connection_tries.addAdmin.resources
+E:\Skróty\programowanie bierzące\1aRepozytoria\TaxPayer\TaxPayer\CSS_database_connection_tries\bin\Debug\CSS_database_connection_tries.exe.config
+E:\Skróty\programowanie bierzące\1aRepozytoria\TaxPayer\TaxPayer\CSS_database_connection_tries\obj\Debug\CSS_database_connection_tries.exe
+E:\Skróty\programowanie bierzące\1aRepozytoria\TaxPayer\TaxPayer\CSS_database_connection_tries\obj\Debug\CSS_database_connection_tries.pdb
+E:\Skróty\programowanie bierzące\1aRepozytoria\TaxPayer\TaxPayer\CSS_database_connection_tries\bin\Debug\CSS_database_connection_tries.exe
+E:\Skróty\programowanie bierzące\1aRepozytoria\TaxPayer\TaxPayer\CSS_database_connection_tries\bin\Debug\CSS_database_connection_tries.pdb
+E:\Skróty\programowanie bierzące\1aRepozytoria\TaxPayer\TaxPayer\CSS_database_connection_tries\bin\Debug\MySql.Data.dll
+E:\Skróty\programowanie bierzące\1aRepozytoria\TaxPayer\TaxPayer\CSS_database_connection_tries\bin\Debug\MySql.Data.xml
+E:\Skróty\programowanie bierzące\1aRepozytoria\TaxPayer\TaxPayer\CSS_database_connection_tries\obj\Debug\TaxPayer.csprojResolveAssemblyReference.cache
+E:\Skróty\programowanie bierzące\1aRepozytoria\TaxPayer\TaxPayer\CSS_database_connection_tries\obj\Debug\CSS_database_connection_tries.Add.resources
+E:\Skróty\programowanie bierzące\1aRepozytoria\TaxPayer\TaxPayer\CSS_database_connection_tries\obj\Debug\CSS_database_connection_tries.addAdmin.resources
+E:\Skróty\programowanie bierzące\1aRepozytoria\TaxPayer\TaxPayer\CSS_database_connection_tries\obj\Debug\CSS_database_connection_tries.addingDatasToCount.resources
+E:\Skróty\programowanie bierzące\1aRepozytoria\TaxPayer\TaxPayer\CSS_database_connection_tries\obj\Debug\CSS_database_connection_tries.AdminPanel.resources
+E:\Skróty\programowanie bierzące\1aRepozytoria\TaxPayer\TaxPayer\CSS_database_connection_tries\obj\Debug\CSS_database_connection_tries.logIn.resources
+E:\Skróty\programowanie bierzące\1aRepozytoria\TaxPayer\TaxPayer\CSS_database_connection_tries\obj\Debug\CSS_database_connection_tries.Properties.Resources.resources
+E:\Skróty\programowanie bierzące\1aRepozytoria\TaxPayer\TaxPayer\CSS_database_connection_tries\obj\Debug\CSS_database_connection_tries.Reactive.resources
+E:\Skróty\programowanie bierzące\1aRepozytoria\TaxPayer\TaxPayer\CSS_database_connection_tries\obj\Debug\CSS_database_connection_tries.Result.resources
+E:\Skróty\programowanie bierzące\1aRepozytoria\TaxPayer\TaxPayer\CSS_database_connection_tries\obj\Debug\CSS_database_connection_tries.TaxFreePayEdit.resources
+E:\Skróty\programowanie bierzące\1aRepozytoria\TaxPayer\TaxPayer\CSS_database_connection_tries\obj\Debug\CSS_database_connection_tries.UpdateDelete.resources
+E:\Skróty\programowanie bierzące\1aRepozytoria\TaxPayer\TaxPayer\CSS_database_connection_tries\obj\Debug\TaxPayer.csproj.GenerateResource.Cache

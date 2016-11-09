@@ -19,28 +19,17 @@ namespace CSS_database_connection_tries
             fillComboId();
         }
 
-        private string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
-        private string selectQuery;
-        private string insertQuery;
-        private string updateQuery;
-        private string value;
-        private string guaranteedAmount;
-        private string downPayment;
-        private string maxPayment;
-        private string contents;
-        private string ids;
-        private int flagFreePayment;
-        MySqlConnection conn;
-        MySqlCommand command;
-        MySqlDataReader queryReader;
 
         void fillComboId()
         { 
-            selectQuery = "SELECT * FROM taxpayer.taxes WHERE flagT=0;";
-
-            conn = new MySqlConnection(connDetail);
-            command = new MySqlCommand(selectQuery, conn);
-
+            string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
+            string selectQuery = "SELECT * FROM taxpayer.taxes WHERE flagT=0;";
+ 
+             MySqlConnection conn = new MySqlConnection(connDetail);
+             MySqlCommand command = new MySqlCommand(selectQuery, conn);
+			 MySqlDataReader queryReader;	
+			 
+			 
             try
             {
                 conn.Open();
@@ -49,7 +38,7 @@ namespace CSS_database_connection_tries
 
                 while (queryReader.Read())
                 {
-                    ids = queryReader.GetString("idtaxes");
+                    string ids = queryReader.GetString("idtaxes");
                     idCombo.Items.Add(ids);
                 }
 
@@ -64,10 +53,13 @@ namespace CSS_database_connection_tries
         private void idCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
             
-            insertQuery = "SELECT * FROM taxpayer.taxes WHERE flagT=0 AND idtaxes='" + idCombo.Text + "';";
+            string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
+             string insertQuery = "SELECT * FROM taxpayer.taxes WHERE flagT=0 AND idtaxes='" + idCombo.Text + "';";
 
-            conn = new MySqlConnection(connDetail);
-            command = new MySqlCommand(insertQuery, conn);
+            MySqlConnection conn = new MySqlConnection(connDetail);
+            MySqlCommand command = new MySqlCommand(insertQuery, conn);
+
+           MySqlDataReader queryReader;
 
             try
             {
@@ -77,12 +69,12 @@ namespace CSS_database_connection_tries
 
                 while (queryReader.Read())
                 {
-                    value = queryReader.GetString("value");
-                    guaranteedAmount = queryReader.GetString("guaranteedAmount");
-                    downPayment = queryReader.GetString("downPayment");
-                    maxPayment = queryReader.GetString("maxPayment");
-                    contents = queryReader.GetString("contents");
-                    flagFreePayment = queryReader.GetInt32("flagFreePayment");
+                   string value = queryReader.GetString("value");
+                   string guaranteedAmount = queryReader.GetString("guaranteedAmount");
+                   string downPayment = queryReader.GetString("downPayment");
+                   string maxPayment = queryReader.GetString("maxPayment");
+                   string contents = queryReader.GetString("contents");
+                   int flagFreePayment = queryReader.GetInt32("flagFreePayment");
 
                     labelForValue.Text = value;
                     labelForGuaranteedAmount.Text = guaranteedAmount;
@@ -111,10 +103,12 @@ namespace CSS_database_connection_tries
         private void reactiveButton_Click(object sender, EventArgs e)
         {
 
-            updateQuery = "UPDATE taxpayer.taxes SET flagT='1' WHERE idtaxes='" + idCombo.Text + "' ;";
+            string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
+            string updateQuery = "UPDATE taxpayer.taxes SET flagT='1' WHERE idtaxes='" + idCombo.Text + "' ;";
+            MySqlConnection conn = new MySqlConnection(connDetail);
+            MySqlCommand command = new MySqlCommand(updateQuery, conn);
 
-            conn = new MySqlConnection(connDetail);
-            command = new MySqlCommand(updateQuery, conn);
+            MySqlDataReader queryReader;
 
             try
             {
