@@ -53,17 +53,17 @@
     <Compile Include="Add.Designer.cs">
       <DependentUpon>Add.cs</DependentUpon>
     </Compile>
-    <Compile Include="addAdmin.cs">
+    <Compile Include="AddAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="addAdmin.Designer.cs">
-      <DependentUpon>addAdmin.cs</DependentUpon>
+    <Compile Include="AddAdmin.Designer.cs">
+      <DependentUpon>AddAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="addingDatasToCount.cs">
+    <Compile Include="AddingDatasToCount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="addingDatasToCount.Designer.cs">
-      <DependentUpon>addingDatasToCount.cs</DependentUpon>
+    <Compile Include="AddingDatasToCount.Designer.cs">
+      <DependentUpon>AddingDatasToCount.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminPanel.cs">
       <SubType>Form</SubType>
@@ -71,11 +71,12 @@
     <Compile Include="AdminPanel.Designer.cs">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="logIn.cs">
+    <Compile Include="Connection.cs" />
+    <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="logIn.Designer.cs">
-      <DependentUpon>logIn.cs</DependentUpon>
+    <Compile Include="LogIn.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -106,17 +107,17 @@
     <EmbeddedResource Include="Add.resx">
       <DependentUpon>Add.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="addAdmin.resx">
-      <DependentUpon>addAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="AddAdmin.resx">
+      <DependentUpon>AddAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="addingDatasToCount.resx">
-      <DependentUpon>addingDatasToCount.cs</DependentUpon>
+    <EmbeddedResource Include="AddingDatasToCount.resx">
+      <DependentUpon>AddingDatasToCount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminPanel.resx">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="logIn.resx">
-      <DependentUpon>logIn.cs</DependentUpon>
+    <EmbeddedResource Include="LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -19,12 +19,13 @@ namespace CSS_database_connection_tries
         }
 
         private int flagFreePayment = 1;
+        Connection connect = new Connection();
 
         private void logOut_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Wylogowany!");
             this.Hide();
-            logIn f1 = new logIn();
+            LogIn f1 = new LogIn();
             f1.Show();
         }
 
@@ -38,10 +39,10 @@ namespace CSS_database_connection_tries
                 flagFreePayment = 0;
             }
 
-			string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
-            string insertQuery = "INSERT INTO taxpayer.taxes (idtaxes, value, guaranteedAmount, downPayment, maxPayment, flagFreePayment, contents, flagT) VALUES (NULL, '" + this.valueUpDown.Value + "','" + this.guaranteedAmountUpDown.Value + "', '" + this.downPaymentUpDown.Value + "', '" + this.maxPaymentUpDown.Value + "', '" + this.flagFreePayment + "','" + this.contentsText.Text + "', '1');";
+			
+            string insertQuery = "INSERT INTO taxpayer.taxes (idtaxes, value, guaranteedAmount, downPayment, maxPayment, flagFreePayment, flagT) VALUES (NULL, '" + this.valueUpDown.Value + "','" + this.guaranteedAmountUpDown.Value + "', '" + this.downPaymentUpDown.Value + "', '" + this.maxPaymentUpDown.Value + "', '" + this.flagFreePayment + "', '1');";
 
-            MySqlConnection conn = new MySqlConnection(connDetail);
+            MySqlConnection conn = new MySqlConnection(connect.connDetail);
             MySqlCommand command = new MySqlCommand(insertQuery, conn);
 
             MySqlDataReader queryReader;

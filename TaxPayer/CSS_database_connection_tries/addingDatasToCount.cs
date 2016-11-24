@@ -10,75 +10,88 @@ using System.Windows.Forms;
 
 namespace CSS_database_connection_tries
 {
-    public partial class addingDatasToCount : Form
+    public partial class AddingDatasToCount : Form
     {
 
-        public addingDatasToCount()
+        public AddingDatasToCount()
         {
             InitializeComponent();
             
         }
 
-
-
         private double incomme;
         private double outcommeHealth;
         private double outcommeSocial;
 
-        private void setIncomme(double value)
-        {
-            this.incomme = value;
+        public double Incomme {
+
+            get
+            {
+                return this.incomme;
+            }
+
+            set
+            {
+                this.incomme = value;
+            }
+
         }
 
-        private void setOutcommeHealth(double value)
-        {
-            this.outcommeHealth = value;
+        public double OutcommeHealth {
+
+            get
+            {
+                return this.outcommeHealth;
+            }
+
+            set
+            {
+                this.outcommeHealth = value;
+            }
         }
 
-        private void setOutcommeSocial(double value)
+        public double OutcommeSocial
         {
-            this.outcommeSocial = value;
-        }
 
-        public double getIncomme()
-        {
-            return this.incomme;
-        }
+            get
+            {
+                return this.outcommeSocial;
+            }
 
-        public double getOutcommeHealth()
-        {
-            return this.outcommeHealth;
-        }
+            set
+            {
+                this.outcommeSocial = value;
+            }
 
-        public double getOutcommeSocial()
-        {
-            return this.outcommeSocial;
         }
+        
 
-        private void zalogujSięToolStripMenuItem_Click(object sender, EventArgs e)
+        private void LogInToolStripMenuItem_Click(object sender, EventArgs e)
         {
-			logIn logIn = new logIn();
+			LogIn logIn = new LogIn();
             this.Hide();
             logIn.Show();
         }
 
-        private void zamknijToolStripMenuItem_Click(object sender, EventArgs e)
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void pomocToolStripMenuItem_Click(object sender, EventArgs e)
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
 
         private void openChecking_Click(object sender, EventArgs e)
         {
-            this.setIncomme((double)this.incommeUpDown.Value);
+            //this.Incomme((double)this.incommeUpDown.Value);
 
-            this.setOutcommeSocial((double)this.outcommeSocialUpDown.Value);
+            this.Incomme = (double)this.incommeUpDown.Value;
 
-            this.setOutcommeHealth((double)this.outcommeHealthUpDown.Value);
+            this.OutcommeSocial = (double)this.outcommeSocialUpDown.Value;
+
+            this.OutcommeHealth = (double)this.outcommeHealthUpDown.Value;
 
             Result r = new Result(this);
             r.Owner = this;

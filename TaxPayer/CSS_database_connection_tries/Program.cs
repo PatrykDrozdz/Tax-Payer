@@ -16,7 +16,7 @@ namespace CSS_database_connection_tries
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new addingDatasToCount());
+            Application.Run(new AddingDatasToCount());
         }
     }
 }

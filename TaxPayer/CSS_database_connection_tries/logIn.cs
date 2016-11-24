@@ -11,23 +11,23 @@ using MySql.Data.MySqlClient;//konieczne do połączenia z db
 
 namespace CSS_database_connection_tries
 {
-    public partial class logIn : Form
+    public partial class LogIn : Form
     {
-        public logIn()
+        public LogIn()
         {
             InitializeComponent();
             pass_text.PasswordChar = '*';
         }
 
-
+        Connection connect = new Connection();
 
         private void connect_db_Click(object sender, EventArgs e)
         {
             try {
 				
-				string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
 				
-                MySqlConnection conn = new MySqlConnection(connDetail);
+				
+                MySqlConnection conn = new MySqlConnection(connect.connDetail);
 
                 MySqlCommand SelectComm = new MySqlCommand("SELECT * FROM taxpayer.admins WHERE login = '" + this.log_text.Text + "' AND password = '" + this.pass_text.Text + "';", conn);
 				MySqlDataReader dataReader;
@@ -80,7 +80,7 @@ namespace CSS_database_connection_tries
         private void liczenieToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-			addingDatasToCount adtc = new addingDatasToCount();
+			AddingDatasToCount adtc = new AddingDatasToCount();
             adtc.Show();
         }
 

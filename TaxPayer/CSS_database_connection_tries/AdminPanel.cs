@@ -20,17 +20,17 @@ namespace CSS_database_connection_tries
             getDatas();
         }
 
-
+        Connection connect = new Connection();
         
         void getFreeTaxPayment()
         {
 
-            string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
+            
              string selectQuery = "SELECT * FROM taxpayer.freetaxvalue;";
         
 
   
-            MySqlConnection conn = new MySqlConnection(connDetail);
+            MySqlConnection conn = new MySqlConnection(connect.connDetail);
             MySqlCommand command = new MySqlCommand(selectQuery, conn);
             MySqlDataReader queryReader;
 
@@ -60,11 +60,11 @@ namespace CSS_database_connection_tries
         void getDatas()
         {
 
-			string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
+	
 			string selectQuery = "SELECT * FROM taxpayer.taxes;";
 
   
-             MySqlConnection conn = new MySqlConnection(connDetail);
+             MySqlConnection conn = new MySqlConnection(connect.connDetail);
              MySqlCommand command = new MySqlCommand(selectQuery, conn);
 
             try
@@ -97,7 +97,7 @@ namespace CSS_database_connection_tries
         {
              MessageBox.Show("wylogowany!");
              this.Hide();
-             logIn main = new logIn();
+             LogIn main = new LogIn();
  
              main.Show();
         }
@@ -114,38 +114,38 @@ namespace CSS_database_connection_tries
             tfpe.ShowDialog();
         }
 
-        private void wylogujSięToolStripMenuItem_Click(object sender, EventArgs e)
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("wylogowany!");
-			logIn main = new logIn();
+			LogIn main = new LogIn();
             this.Hide();
             main.Show();
         }
 
-        private void zamknijToolStripMenuItem_Click(object sender, EventArgs e)
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void dodajStawkęToolStripMenuItem_Click(object sender, EventArgs e)
+        private void addValueToolStripMenuItem_Click(object sender, EventArgs e)
         {
 			Add adDel = new Add();
             adDel.ShowDialog();
         }
 
-        private void kwoteWolnaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void freeValueToolStripMenuItem_Click(object sender, EventArgs e)
         {
 			TaxFreePayEdit tfpe = new TaxFreePayEdit();
             tfpe.ShowDialog();
         }
 
-        private void stawkęPodatkuToolStripMenuItem_Click(object sender, EventArgs e)
+        private void taxValueToolStripMenuItem_Click(object sender, EventArgs e)
         {
 			UpdateDelete updel = new UpdateDelete();
             updel.ShowDialog();
         }
 
-        private void odświeżToolStripMenuItem_Click(object sender, EventArgs e)
+        private void refreashToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.getDatas();
             this.getFreeTaxPayment();
@@ -163,7 +163,7 @@ namespace CSS_database_connection_tries
             reac.ShowDialog();
         }
 
-        private void akktywujPrógToolStripMenuItem_Click(object sender, EventArgs e)
+        private void reactiveToolStripMenuItem_Click(object sender, EventArgs e)
         {
 			Reactive reac = new Reactive();
             reac.ShowDialog();
@@ -176,19 +176,16 @@ namespace CSS_database_connection_tries
 
         private void addAdmin_button_Click(object sender, EventArgs e)
         {
-			addAdmin addAdmin = new addAdmin();
+			AddAdmin addAdmin = new AddAdmin();
             addAdmin.ShowDialog();
         }
 
-        private void dodajAdministratoraToolStripMenuItem_Click(object sender, EventArgs e)
+        private void addAdminToolStripMenuItem_Click(object sender, EventArgs e)
         {
-			addAdmin addAdmin = new addAdmin();
+			AddAdmin addAdmin = new AddAdmin();
             addAdmin.ShowDialog();
         }
 
-        private void menuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }

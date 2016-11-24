@@ -1,6 +1,6 @@
 ﻿namespace CSS_database_connection_tries
 {
-    partial class addingDatasToCount
+    partial class AddingDatasToCount
     {
         /// <summary>
         /// Required designer variable.
@@ -35,10 +35,10 @@
             this.outcommeSocialLabel = new System.Windows.Forms.Label();
             this.menuMain = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.zalogujSięToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.zamknijToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pomocToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.outcommeHealthLabel = new System.Windows.Forms.Label();
             this.outcommeHealthUpDown = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.incommeUpDown)).BeginInit();
@@ -125,40 +125,40 @@
             // menuToolStripMenuItem
             // 
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.zalogujSięToolStripMenuItem,
-            this.zamknijToolStripMenuItem});
+            this.logInToolStripMenuItem,
+            this.closeToolStripMenuItem});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.menuToolStripMenuItem.Text = "Menu";
             // 
-            // zalogujSięToolStripMenuItem
+            // logInToolStripMenuItem
             // 
-            this.zalogujSięToolStripMenuItem.Name = "zalogujSięToolStripMenuItem";
-            this.zalogujSięToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
-            this.zalogujSięToolStripMenuItem.Text = "Zaloguj się";
-            this.zalogujSięToolStripMenuItem.Click += new System.EventHandler(this.zalogujSięToolStripMenuItem_Click);
+            this.logInToolStripMenuItem.Name = "logInToolStripMenuItem";
+            this.logInToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.logInToolStripMenuItem.Text = "Zaloguj się";
+            this.logInToolStripMenuItem.Click += new System.EventHandler(this.LogInToolStripMenuItem_Click);
             // 
-            // zamknijToolStripMenuItem
+            // closeToolStripMenuItem
             // 
-            this.zamknijToolStripMenuItem.Name = "zamknijToolStripMenuItem";
-            this.zamknijToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
-            this.zamknijToolStripMenuItem.Text = "Zamknij";
-            this.zamknijToolStripMenuItem.Click += new System.EventHandler(this.zamknijToolStripMenuItem_Click);
+            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.closeToolStripMenuItem.Text = "Zamknij";
+            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pomocToolStripMenuItem});
+            this.helpToolStripMenuItem2});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.helpToolStripMenuItem.Text = "Pomoc";
             // 
-            // pomocToolStripMenuItem
+            // helpToolStripMenuItem2
             // 
-            this.pomocToolStripMenuItem.Name = "pomocToolStripMenuItem";
-            this.pomocToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.pomocToolStripMenuItem.Text = "Pomoc";
-            this.pomocToolStripMenuItem.Click += new System.EventHandler(this.pomocToolStripMenuItem_Click);
+            this.helpToolStripMenuItem2.Name = "helpToolStripMenuItem2";
+            this.helpToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.helpToolStripMenuItem2.Text = "Pomoc";
+            this.helpToolStripMenuItem2.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // outcommeHealthLabel
             // 
@@ -187,7 +187,7 @@
             this.outcommeHealthUpDown.Size = new System.Drawing.Size(120, 20);
             this.outcommeHealthUpDown.TabIndex = 7;
             // 
-            // addingDatasToCount
+            // AddingDatasToCount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -205,7 +205,7 @@
             this.MaximumSize = new System.Drawing.Size(442, 383);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(442, 383);
-            this.Name = "addingDatasToCount";
+            this.Name = "AddingDatasToCount";
             this.Text = "Sprawdź swoje podatki";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.addingDatasToCount_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.incommeUpDown)).EndInit();
@@ -227,10 +227,10 @@
         private System.Windows.Forms.Label outcommeSocialLabel;
         private System.Windows.Forms.MenuStrip menuMain;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem zalogujSięToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem zamknijToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logInToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pomocToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem2;
         private System.Windows.Forms.Label outcommeHealthLabel;
         private System.Windows.Forms.NumericUpDown outcommeHealthUpDown;
     }

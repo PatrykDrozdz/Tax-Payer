@@ -11,25 +11,24 @@ using MySql.Data.MySqlClient;//konieczne do połączenia z db
 
 namespace CSS_database_connection_tries
 {
-    public partial class addAdmin : Form
+    public partial class AddAdmin : Form
     {
-        public addAdmin()
+        public AddAdmin()
         {
             InitializeComponent();
             passTxt.PasswordChar = '*';
         }
 
         private int checkLogin = 0;
-
+        Connection connect = new Connection();
 
         private void addAdministrator_Click(object sender, EventArgs e)
         {
 
-           string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
            string selectQuery = "SELECT * FROM taxpayer.admins;";
            string insertQuery = "INSERT INTO taxpayer.admins(idadmins, login, password) VALUES(NULL, '"+this.logTxt.Text+"', '"+this.passTxt.Text+"');";
 
-            MySqlConnection conn = new MySqlConnection(connDetail);
+            MySqlConnection conn = new MySqlConnection(connect.connDetail);
             MySqlCommand command = new MySqlCommand(selectQuery, conn);
             MySqlCommand command2 = new MySqlCommand(insertQuery, conn);
 

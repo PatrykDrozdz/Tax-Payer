@@ -14,23 +14,26 @@ namespace CSS_database_connection_tries
     public partial class Result : Form 
     {
 
-        addingDatasToCount add;
+        AddingDatasToCount add;
+        Connection connect = new Connection();
         int countValues = 0;
+        double freePay = 0.0;
 
-        public Result(addingDatasToCount add)
+        public Result(AddingDatasToCount add)
         {
             InitializeComponent();
             this.add = add;
             counting();
         }
 
+        
+
         void getTaxFreePayment()
         {
 
-            string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
-			string selectQuery = "SELECT * FROM taxpayer.taxes WHERE flagT=1;";
+			string selectQuery = "SELECT * FROM taxpayer.freetaxvalue;";
 			
-			MySqlConnection conn = new MySqlConnection(connDetail);
+			MySqlConnection conn = new MySqlConnection(connect.connDetail);
             MySqlCommand command = new MySqlCommand(selectQuery, conn);
 			MySqlDataReader queryReader;
 
@@ -42,10 +45,10 @@ namespace CSS_database_connection_tries
 
                 while (queryReader.Read())
                 {
-
+                    this.freePay = queryReader.GetDouble("freePay");
                 }
 
-
+                
             }
             catch (Exception ex)
             {
@@ -57,11 +60,11 @@ namespace CSS_database_connection_tries
 
         void counting()
         {
+            getTaxFreePayment();
 
-            string connDetail = "datasource=localhost;port=3306;username=root;password=root;";
-			string selectQuery = "SELECT * FROM taxpayer.taxes WHERE flagT=1;";
+            string selectQuery = "SELECT * FROM taxpayer.taxes WHERE flagT=1;";
 			
-			MySqlConnection conn = new MySqlConnection(connDetail);
+			MySqlConnection conn = new MySqlConnection(connect.connDetail);
             MySqlCommand command = new MySqlCommand(selectQuery, conn);
 			MySqlDataReader queryReader;
 
@@ -77,14 +80,13 @@ namespace CSS_database_connection_tries
                     countValues++;
                 }
 
-                //this.ResultValueTab = new double[this.countValues];
-
-               /* this.Values[0] = countValues;
-                this.Values[1] = add.getIncomme();
-
-                 taxValueCount.Text = this.Values[0].ToString();
-                 taxValue.Text = this.Values[1].ToString();
-                 */
+               //sprawdzanie
+               //////////////////////////////////
+                taxValue.Text = add.Incomme.ToString();
+                taxValueCount.Text = add.OutcommeHealth.ToString();
+                taxValueLabel.Text = add.OutcommeSocial.ToString();
+                taxLabel.Text = this.freePay.ToString();
+                ///////////////////////////////////////////////
 
             }
             catch (Exception ex)
@@ -94,9 +96,6 @@ namespace CSS_database_connection_tries
 
         }
 
-        private void Result_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            
-        }
+       
     }
 }

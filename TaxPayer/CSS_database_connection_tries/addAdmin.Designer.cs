@@ -1,6 +1,6 @@
 ﻿namespace CSS_database_connection_tries
 {
-    partial class addAdmin
+    partial class AddAdmin
     {
         /// <summary>
         /// Required designer variable.
