@@ -136,8 +136,8 @@ namespace CSS_database_connection_tries
 
                 while (queryReader.Read())
                 {
-                    string value = queryReader.GetString("value");
-                    string guaranteedAmount = queryReader.GetString("guaranteedAmount");
+                     string value = queryReader.GetString("value");
+                     string guaranteedAmount = queryReader.GetString("guaranteedAmount");
                      string downPayment = queryReader.GetString("downPayment");
                      string maxPayment = queryReader.GetString("maxPayment");
                      int flagFreePayment = queryReader.GetInt32("flagFreePayment");

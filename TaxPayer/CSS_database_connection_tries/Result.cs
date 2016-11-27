@@ -26,7 +26,14 @@ namespace CSS_database_connection_tries
             counting();
         }
 
-        
+        private double[] resultTab;
+        private double[] valueTab;
+        private double[] guaranteedAmountTab;
+        private double[] downPaymentTab;
+        private double[] maxPaymentTab;
+        private double[] flagFreePaymentTab;
+        private double payment;
+        private int i = 0;
 
         void getTaxFreePayment()
         {
@@ -80,12 +87,36 @@ namespace CSS_database_connection_tries
                     countValues++;
                 }
 
-               //sprawdzanie
-               //////////////////////////////////
-                taxValue.Text = add.Incomme.ToString();
-                taxValueCount.Text = add.OutcommeHealth.ToString();
-                taxValueLabel.Text = add.OutcommeSocial.ToString();
-                taxLabel.Text = this.freePay.ToString();
+                resultTab = new double[this.countValues];
+                valueTab = new double[this.countValues];
+                guaranteedAmountTab = new double[this.countValues];
+                downPaymentTab = new double[this.countValues];
+                maxPaymentTab = new double[this.countValues];
+                flagFreePaymentTab = new double[this.countValues];
+
+                this.payment = add.Incomme - add.OutcommeSocial;
+
+                 
+              
+                while(queryReader.Read())
+                {
+                    this.valueTab[i] = queryReader.GetDouble("value");
+                    this.guaranteedAmountTab[i] = queryReader.GetDouble("guaranteedAmount");
+                    this.downPaymentTab[i] = queryReader.GetDouble("downPayment");
+                    this.maxPaymentTab[i] = queryReader.GetDouble("maxPayment");
+                    this.flagFreePaymentTab[i] = queryReader.GetDouble("flagFreePayment");
+                    i = i + 1;
+ 
+                }
+
+                //sprawdzanie
+                //////////////////////////////////
+
+                //taxValue.Text = this.payment.ToString();
+                //taxValue.Text = add.Incomme.ToString(); ///kwota podatkowa
+                //taxValueCount.Text = add.OutcommeHealth.ToString(); ///ile do zapłacenia
+                //taxValueLabel.Text = add.OutcommeSocial.ToString();
+                //taxLabel.Text = this.freePay.ToString();
                 ///////////////////////////////////////////////
 
             }
