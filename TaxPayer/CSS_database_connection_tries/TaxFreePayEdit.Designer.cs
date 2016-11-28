@@ -87,15 +87,15 @@
             this.taxFreePaymentLabel2.AutoSize = true;
             this.taxFreePaymentLabel2.Location = new System.Drawing.Point(42, 103);
             this.taxFreePaymentLabel2.Name = "taxFreePaymentLabel2";
-            this.taxFreePaymentLabel2.Size = new System.Drawing.Size(191, 13);
+            this.taxFreePaymentLabel2.Size = new System.Drawing.Size(195, 13);
             this.taxFreePaymentLabel2.TabIndex = 5;
-            this.taxFreePaymentLabel2.Text = "Kwota wolna od podatku do altualizacji";
+            this.taxFreePaymentLabel2.Text = "Kwota wolna od podatku do aktualizacji";
             // 
             // TaxFreePayEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(259, 252);
+            this.ClientSize = new System.Drawing.Size(259, 251);
             this.Controls.Add(this.taxFreePaymentLabel2);
             this.Controls.Add(this.taxFreePaymentUpDown);
             this.Controls.Add(this.taxFreePaymentToShow);

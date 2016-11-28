@@ -60,7 +60,7 @@
             // 
             // logOut
             // 
-            this.logOut.Location = new System.Drawing.Point(868, 52);
+            this.logOut.Location = new System.Drawing.Point(868, 163);
             this.logOut.Name = "logOut";
             this.logOut.Size = new System.Drawing.Size(99, 44);
             this.logOut.TabIndex = 10;
@@ -84,7 +84,7 @@
             this.addDeleteOpen.Name = "addDeleteOpen";
             this.addDeleteOpen.Size = new System.Drawing.Size(99, 55);
             this.addDeleteOpen.TabIndex = 14;
-            this.addDeleteOpen.Text = "edytuj/usuń stawkę podatkową";
+            this.addDeleteOpen.Text = "Edytuj/Usuń stawkę podatkową";
             this.addDeleteOpen.UseVisualStyleBackColor = true;
             this.addDeleteOpen.Click += new System.EventHandler(this.addDeleteOpen_Click);
             // 
@@ -145,7 +145,7 @@
             // helpToolStripMenuItem2
             // 
             this.helpToolStripMenuItem2.Name = "helpToolStripMenuItem2";
-            this.helpToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.helpToolStripMenuItem2.Size = new System.Drawing.Size(112, 22);
             this.helpToolStripMenuItem2.Text = "Pomoc";
             // 
             // operacjeToolStripMenuItem
@@ -246,7 +246,7 @@
             // 
             // refreshButton
             // 
-            this.refreshButton.Location = new System.Drawing.Point(868, 174);
+            this.refreshButton.Location = new System.Drawing.Point(868, 52);
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.Size = new System.Drawing.Size(99, 33);
             this.refreshButton.TabIndex = 20;
@@ -275,9 +275,9 @@
             // 
             // addAdmin_button
             // 
-            this.addAdmin_button.Location = new System.Drawing.Point(868, 115);
+            this.addAdmin_button.Location = new System.Drawing.Point(868, 102);
             this.addAdmin_button.Name = "addAdmin_button";
-            this.addAdmin_button.Size = new System.Drawing.Size(99, 42);
+            this.addAdmin_button.Size = new System.Drawing.Size(99, 55);
             this.addAdmin_button.TabIndex = 23;
             this.addAdmin_button.Text = "Dodaj administratora";
             this.addAdmin_button.UseVisualStyleBackColor = true;
@@ -287,7 +287,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(979, 502);
+            this.ClientSize = new System.Drawing.Size(979, 501);
             this.Controls.Add(this.addAdmin_button);
             this.Controls.Add(this.Reactive);
             this.Controls.Add(this.info_label);

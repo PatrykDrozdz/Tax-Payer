@@ -46,7 +46,7 @@
             // 
             // valueUpDown
             // 
-            this.valueUpDown.DecimalPlaces = 3;
+            this.valueUpDown.DecimalPlaces = 2;
             this.valueUpDown.Increment = new decimal(new int[] {
             1,
             0,
@@ -176,7 +176,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 324);
+            this.ClientSize = new System.Drawing.Size(493, 323);
             this.Controls.Add(this.freePaymentUnused);
             this.Controls.Add(this.guaranteedAmountLabel);
             this.Controls.Add(this.guaranteedAmountUpDown);
