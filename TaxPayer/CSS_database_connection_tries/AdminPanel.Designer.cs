@@ -41,10 +41,11 @@
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.taxValueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.freeValueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.refreashToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reactiveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.refreashToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administratcjaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dodajAdministratoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.edytujSwojeKontoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showAllDatas = new System.Windows.Forms.DataGridView();
             this.freePayLabel = new System.Windows.Forms.Label();
             this.info_label = new System.Windows.Forms.Label();
@@ -110,8 +111,8 @@
             this.operacjeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addValueToolStripMenuItem,
             this.editToolStripMenuItem,
-            this.refreashToolStripMenuItem,
-            this.reactiveToolStripMenuItem});
+            this.reactiveToolStripMenuItem,
+            this.refreashToolStripMenuItem});
             this.operacjeToolStripMenuItem.Name = "operacjeToolStripMenuItem";
             this.operacjeToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.operacjeToolStripMenuItem.Text = "Operacje";
@@ -122,7 +123,7 @@
             this.stawkęPodatkuToolStripMenuItem,
             this.kwotęWolnaOdPodatkuToolStripMenuItem});
             this.addValueToolStripMenuItem.Name = "addValueToolStripMenuItem";
-            this.addValueToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addValueToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.addValueToolStripMenuItem.Text = "Dodaj";
             // 
             // stawkęPodatkuToolStripMenuItem
@@ -145,7 +146,7 @@
             this.taxValueToolStripMenuItem,
             this.freeValueToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.editToolStripMenuItem.Text = "Edytuj";
             // 
             // taxValueToolStripMenuItem
@@ -162,24 +163,25 @@
             this.freeValueToolStripMenuItem.Text = "Kwote wolna";
             this.freeValueToolStripMenuItem.Click += new System.EventHandler(this.freeValueToolStripMenuItem_Click);
             // 
-            // refreashToolStripMenuItem
-            // 
-            this.refreashToolStripMenuItem.Name = "refreashToolStripMenuItem";
-            this.refreashToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.refreashToolStripMenuItem.Text = "Odśwież";
-            this.refreashToolStripMenuItem.Click += new System.EventHandler(this.refreashToolStripMenuItem_Click);
-            // 
             // reactiveToolStripMenuItem
             // 
             this.reactiveToolStripMenuItem.Name = "reactiveToolStripMenuItem";
-            this.reactiveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.reactiveToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.reactiveToolStripMenuItem.Text = "Akktywuj próg";
             this.reactiveToolStripMenuItem.Click += new System.EventHandler(this.reactiveToolStripMenuItem_Click);
+            // 
+            // refreashToolStripMenuItem
+            // 
+            this.refreashToolStripMenuItem.Name = "refreashToolStripMenuItem";
+            this.refreashToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.refreashToolStripMenuItem.Text = "Odśwież";
+            this.refreashToolStripMenuItem.Click += new System.EventHandler(this.refreashToolStripMenuItem_Click);
             // 
             // administratcjaToolStripMenuItem
             // 
             this.administratcjaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dodajAdministratoraToolStripMenuItem});
+            this.dodajAdministratoraToolStripMenuItem,
+            this.edytujSwojeKontoToolStripMenuItem});
             this.administratcjaToolStripMenuItem.Name = "administratcjaToolStripMenuItem";
             this.administratcjaToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
             this.administratcjaToolStripMenuItem.Text = "Administratcja";
@@ -190,6 +192,13 @@
             this.dodajAdministratoraToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.dodajAdministratoraToolStripMenuItem.Text = "Dodaj administratora";
             this.dodajAdministratoraToolStripMenuItem.Click += new System.EventHandler(this.addAdminToolStripMenuItem_Click);
+            // 
+            // edytujSwojeKontoToolStripMenuItem
+            // 
+            this.edytujSwojeKontoToolStripMenuItem.Name = "edytujSwojeKontoToolStripMenuItem";
+            this.edytujSwojeKontoToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.edytujSwojeKontoToolStripMenuItem.Text = "Edytuj swoje konto";
+            this.edytujSwojeKontoToolStripMenuItem.Click += new System.EventHandler(this.editAdminAccountToolStripMenuItem_Click);
             // 
             // showAllDatas
             // 
@@ -223,7 +232,7 @@
             // 
             this.taxelLabel.AutoSize = true;
             this.taxelLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.taxelLabel.Location = new System.Drawing.Point(10, 34);
+            this.taxelLabel.Location = new System.Drawing.Point(12, 34);
             this.taxelLabel.Name = "taxelLabel";
             this.taxelLabel.Size = new System.Drawing.Size(191, 25);
             this.taxelLabel.TabIndex = 24;
@@ -234,14 +243,14 @@
             this.freePaysShow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.freePaysShow.Location = new System.Drawing.Point(784, 88);
             this.freePaysShow.Name = "freePaysShow";
-            this.freePaysShow.Size = new System.Drawing.Size(244, 150);
+            this.freePaysShow.Size = new System.Drawing.Size(244, 358);
             this.freePaysShow.TabIndex = 25;
             // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1049, 502);
+            this.ClientSize = new System.Drawing.Size(1049, 501);
             this.Controls.Add(this.freePaysShow);
             this.Controls.Add(this.taxelLabel);
             this.Controls.Add(this.info_label);
@@ -254,7 +263,7 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1065, 540);
             this.Name = "AdminPanel";
-            this.Text = "AdminPanel";
+            this.Text = "Panel administracyjny";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminPanel_FormClosing);
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
@@ -288,5 +297,6 @@
         private System.Windows.Forms.DataGridView freePaysShow;
         private System.Windows.Forms.ToolStripMenuItem stawkęPodatkuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kwotęWolnaOdPodatkuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem edytujSwojeKontoToolStripMenuItem;
     }
 }

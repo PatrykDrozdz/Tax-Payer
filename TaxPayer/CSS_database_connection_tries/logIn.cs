@@ -13,13 +13,32 @@ namespace CSS_database_connection_tries
 {
     public partial class LogIn : Form
     {
+
+        Connection connect = new Connection();
+        private string login;
+
         public LogIn()
         {
             InitializeComponent();
             pass_text.PasswordChar = '*';
         }
 
-        Connection connect = new Connection();
+
+        public string Login
+        {
+            set
+            {
+                this.login = value;
+            }
+
+            get
+            {
+                return this.login;
+            }
+
+
+        }
+        
 
         private void connect_db_Click(object sender, EventArgs e)
         {
@@ -47,10 +66,16 @@ namespace CSS_database_connection_tries
                 if (userCount == 1)
                 {
                     MessageBox.Show("admin zalogowany!");
-					AdminPanel formAdmin = new AdminPanel();
+					//AdminPanel formAdmin = new AdminPanel();
                     this.Hide();
 
-                    formAdmin.Show();
+
+                    Login = (string)log_text.Text;
+
+                    AdminPanel ap = new AdminPanel(this);
+                    ap.Owner = this;
+
+                    ap.Show();
 
                 }
                 else if (userCount > 1)

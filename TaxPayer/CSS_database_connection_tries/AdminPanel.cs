@@ -13,28 +13,49 @@ namespace CSS_database_connection_tries
 {
     public partial class AdminPanel : Form
     {
-        public AdminPanel()
+        LogIn li;
+        Connection connect = new Connection();
+        private string login;
+
+        public AdminPanel(LogIn li)
         {
             InitializeComponent();
+            this.li = li;
             getFreeTaxPayment();
             getDatas();
+            this.Login = li.Login;
+        }
+        
+        public string Login
+        {
+            set
+            {
+                this.login = value;
+            }
+
+            get
+            {
+                return this.login;
+            }
+
         }
 
-        Connection connect = new Connection();
-        
+
+
         void getFreeTaxPayment()
         {
 
             
-             string selectQuery = "SELECT * FROM taxpayer.freetaxvalue;";
-        
+            string selectQuery = "SELECT * FROM taxpayer.freetaxvalue;";
 
-  
+           // this.info_label.Text = li.Login.ToString();
+
             MySqlConnection conn = new MySqlConnection(connect.connDetail);
             MySqlCommand command = new MySqlCommand(selectQuery, conn);
 
             try
             {
+
                 MySqlDataAdapter adaptData = new MySqlDataAdapter();
                 DataTable dbDatas = new DataTable();
                 BindingSource bSource = new BindingSource();
@@ -190,6 +211,13 @@ namespace CSS_database_connection_tries
         {
             AddFreeTaxValue addFree = new AddFreeTaxValue();
             addFree.ShowDialog();
+        }
+
+        private void editAdminAccountToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UpdateAccount ua = new UpdateAccount(this);
+            ua.Owner = this;
+            ua.ShowDialog();
         }
     }
 }

@@ -101,7 +101,6 @@ namespace CSS_database_connection_tries
 
         private void openChecking_Click(object sender, EventArgs e)
         {
-            //this.Incomme((double)this.incommeUpDown.Value);
 
             this.Incomme = (double)this.incommeUpDown.Value;
 

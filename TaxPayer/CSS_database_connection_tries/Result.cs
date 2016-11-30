@@ -16,8 +16,14 @@ namespace CSS_database_connection_tries
 
         AddingDatasToCount add;
         Connection connect = new Connection();
-        int countValues = 0;
-        double freePay = 0.0;
+        double[] results;
+        List<double> values = new List<double>();
+        List<double> guaranteedAmounts = new List<double>();
+        List<double> downPayments = new List<double>();
+        List<double> maxPayments = new List<double>();
+        List<double> freeTaxValues = new List<double>();
+        List<int> freeTaxFlags = new List<int>();
+        double payment;
 
         public Result(AddingDatasToCount add)
         {
@@ -25,15 +31,6 @@ namespace CSS_database_connection_tries
             this.add = add;
             counting();
         }
-
-        private double[] resultTab;
-        private double[] valueTab;
-        private double[] guaranteedAmountTab;
-        private double[] downPaymentTab;
-        private double[] maxPaymentTab;
-        private double[] flagFreePaymentTab;
-        private double payment;
-        private int i = 0;
 
         void getTaxFreePayment()
         {
@@ -50,9 +47,11 @@ namespace CSS_database_connection_tries
 
                 queryReader = command.ExecuteReader();
 
+                
+
                 while (queryReader.Read())
                 {
-                    this.freePay = queryReader.GetDouble("freePay");
+                    this.freeTaxValues.Add(queryReader.GetDouble("freePay"));
                 }
 
                 
@@ -81,43 +80,33 @@ namespace CSS_database_connection_tries
                 conn.Open();
 
                 queryReader = command.ExecuteReader();
-
+                
                 while (queryReader.Read())
-                {    
-                    countValues++;
-                }
+                {
 
-                resultTab = new double[this.countValues];
-                valueTab = new double[this.countValues];
-                guaranteedAmountTab = new double[this.countValues];
-                downPaymentTab = new double[this.countValues];
-                maxPaymentTab = new double[this.countValues];
-                flagFreePaymentTab = new double[this.countValues];
+                    this.values.Add(queryReader.GetDouble("value"));
+                    this.guaranteedAmounts.Add(queryReader.GetDouble("guaranteedAmount"));
+                    this.downPayments.Add(queryReader.GetDouble("downPayment"));
+                    this.maxPayments.Add(queryReader.GetDouble("maxPayment"));
+                    this.freeTaxFlags.Add(queryReader.GetInt32("freetaxvalue_idfreetaxvalue"));
+
+                }
 
                 this.payment = add.Incomme - add.OutcommeSocial - add.IncommeCosts;
 
-                 
-              
-                while(queryReader.Read())
+                this.results = new double[this.values.Count];
+
+                for(int i=0; i<this.values.Count; i++)
                 {
-                    this.valueTab[i] = queryReader.GetDouble("value");
-                    this.guaranteedAmountTab[i] = queryReader.GetDouble("guaranteedAmount");
-                    this.downPaymentTab[i] = queryReader.GetDouble("downPayment");
-                    this.maxPaymentTab[i] = queryReader.GetDouble("maxPayment");
-                    i = i + 1;
- 
+
+                    //this.freeTaxFlags[i];
+                    this.results[i] = (this.guaranteedAmounts[i] + (this.payment - this.downPayments[i] - 3091
+                        ) * this.values[i]) - add.OutcommeHealth;
                 }
 
-                //sprawdzanie
-                //////////////////////////////////
-
-                //taxValue.Text = this.payment.ToString();
-                //taxValue.Text = add.Incomme.ToString(); ///kwota podatkowa
-                //taxValueCount.Text = add.OutcommeHealth.ToString(); ///ile do zapłacenia
-                //taxValueLabel.Text = add.OutcommeSocial.ToString();
-                //taxLabel.Text = this.freePay.ToString();
-                ///////////////////////////////////////////////
-
+                this.taxValue.Text = results[0].ToString();
+                //this.taxValueCount.Text = this.values[0].ToString();
+                this.taxValueCount.Text = 3091.ToString();
             }
             catch (Exception ex)
             {

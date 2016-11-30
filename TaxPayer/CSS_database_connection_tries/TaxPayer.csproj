@@ -104,6 +104,12 @@
     <Compile Include="TaxFreePayEdit.Designer.cs">
       <DependentUpon>TaxFreePayEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateAccount.Designer.cs">
+      <DependentUpon>UpdateAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="UpdateDelete.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TaxFreePayEdit.resx">
       <DependentUpon>TaxFreePayEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateAccount.resx">
+      <DependentUpon>UpdateAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateDelete.resx">
       <DependentUpon>UpdateDelete.cs</DependentUpon>

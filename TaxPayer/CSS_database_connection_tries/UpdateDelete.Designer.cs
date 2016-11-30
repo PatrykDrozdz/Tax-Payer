@@ -174,7 +174,7 @@
             // 
             // valueUpDown
             // 
-            this.valueUpDown.DecimalPlaces = 3;
+            this.valueUpDown.DecimalPlaces = 2;
             this.valueUpDown.Increment = new decimal(new int[] {
             1,
             0,
@@ -228,7 +228,7 @@
             // 
             // guaranteedAmountUpDown
             // 
-            this.guaranteedAmountUpDown.DecimalPlaces = 3;
+            this.guaranteedAmountUpDown.DecimalPlaces = 2;
             this.guaranteedAmountUpDown.Increment = new decimal(new int[] {
             1,
             0,
@@ -236,8 +236,8 @@
             131072});
             this.guaranteedAmountUpDown.Location = new System.Drawing.Point(42, 191);
             this.guaranteedAmountUpDown.Maximum = new decimal(new int[] {
-            1,
-            0,
+            1410065408,
+            2,
             0,
             0});
             this.guaranteedAmountUpDown.Name = "guaranteedAmountUpDown";
@@ -360,7 +360,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(852, 486);
+            this.ClientSize = new System.Drawing.Size(852, 485);
             this.Controls.Add(this.editGroup);
             this.Controls.Add(this.infoGroup);
             this.Controls.Add(this.idLabel);
