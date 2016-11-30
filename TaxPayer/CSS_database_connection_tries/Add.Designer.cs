@@ -37,7 +37,8 @@
             this.downPaymentUpDown = new System.Windows.Forms.NumericUpDown();
             this.guaranteedAmountLabel = new System.Windows.Forms.Label();
             this.guaranteedAmountUpDown = new System.Windows.Forms.NumericUpDown();
-            this.freePaymentUnused = new System.Windows.Forms.CheckBox();
+            this.taxFreeValue = new System.Windows.Forms.ComboBox();
+            this.freeTaxValueLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.valueUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maxPaymentUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.downPaymentUpDown)).BeginInit();
@@ -70,7 +71,7 @@
             0,
             0,
             0});
-            this.maxPaymentUpDown.Location = new System.Drawing.Point(259, 161);
+            this.maxPaymentUpDown.Location = new System.Drawing.Point(28, 361);
             this.maxPaymentUpDown.Maximum = new decimal(new int[] {
             1000000000,
             0,
@@ -92,7 +93,7 @@
             // maxPaymentLabel
             // 
             this.maxPaymentLabel.AutoSize = true;
-            this.maxPaymentLabel.Location = new System.Drawing.Point(256, 127);
+            this.maxPaymentLabel.Location = new System.Drawing.Point(25, 327);
             this.maxPaymentLabel.Name = "maxPaymentLabel";
             this.maxPaymentLabel.Size = new System.Drawing.Size(208, 13);
             this.maxPaymentLabel.TabIndex = 6;
@@ -100,7 +101,9 @@
             // 
             // insertToDB
             // 
-            this.insertToDB.Location = new System.Drawing.Point(116, 260);
+            this.insertToDB.Location = new System.Drawing.Point(18, 519);
+            this.insertToDB.MaximumSize = new System.Drawing.Size(215, 44);
+            this.insertToDB.MinimumSize = new System.Drawing.Size(215, 44);
             this.insertToDB.Name = "insertToDB";
             this.insertToDB.Size = new System.Drawing.Size(215, 44);
             this.insertToDB.TabIndex = 8;
@@ -111,7 +114,7 @@
             // downPaymentLabel
             // 
             this.downPaymentLabel.AutoSize = true;
-            this.downPaymentLabel.Location = new System.Drawing.Point(256, 29);
+            this.downPaymentLabel.Location = new System.Drawing.Point(25, 229);
             this.downPaymentLabel.Name = "downPaymentLabel";
             this.downPaymentLabel.Size = new System.Drawing.Size(196, 13);
             this.downPaymentLabel.TabIndex = 10;
@@ -125,7 +128,7 @@
             0,
             0,
             0});
-            this.downPaymentUpDown.Location = new System.Drawing.Point(259, 60);
+            this.downPaymentUpDown.Location = new System.Drawing.Point(28, 260);
             this.downPaymentUpDown.Maximum = new decimal(new int[] {
             1000000000,
             0,
@@ -162,22 +165,31 @@
             this.guaranteedAmountUpDown.Size = new System.Drawing.Size(120, 20);
             this.guaranteedAmountUpDown.TabIndex = 11;
             // 
-            // freePaymentUnused
+            // taxFreeValue
             // 
-            this.freePaymentUnused.AutoSize = true;
-            this.freePaymentUnused.Location = new System.Drawing.Point(116, 212);
-            this.freePaymentUnused.Name = "freePaymentUnused";
-            this.freePaymentUnused.Size = new System.Drawing.Size(215, 17);
-            this.freePaymentUnused.TabIndex = 13;
-            this.freePaymentUnused.Text = "Nie odlicza się kwoty wolnej od podatku";
-            this.freePaymentUnused.UseVisualStyleBackColor = true;
+            this.taxFreeValue.FormattingEnabled = true;
+            this.taxFreeValue.Location = new System.Drawing.Point(28, 469);
+            this.taxFreeValue.Name = "taxFreeValue";
+            this.taxFreeValue.Size = new System.Drawing.Size(120, 21);
+            this.taxFreeValue.TabIndex = 13;
+            this.taxFreeValue.SelectedIndexChanged += new System.EventHandler(this.taxFreeValue_SelectedIndexChanged);
+            // 
+            // freeTaxValueLabel
+            // 
+            this.freeTaxValueLabel.AutoSize = true;
+            this.freeTaxValueLabel.Location = new System.Drawing.Point(25, 428);
+            this.freeTaxValueLabel.Name = "freeTaxValueLabel";
+            this.freeTaxValueLabel.Size = new System.Drawing.Size(125, 13);
+            this.freeTaxValueLabel.TabIndex = 14;
+            this.freeTaxValueLabel.Text = "Kwota wolna od podatku";
             // 
             // Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 323);
-            this.Controls.Add(this.freePaymentUnused);
+            this.ClientSize = new System.Drawing.Size(262, 575);
+            this.Controls.Add(this.freeTaxValueLabel);
+            this.Controls.Add(this.taxFreeValue);
             this.Controls.Add(this.guaranteedAmountLabel);
             this.Controls.Add(this.guaranteedAmountUpDown);
             this.Controls.Add(this.downPaymentLabel);
@@ -188,9 +200,7 @@
             this.Controls.Add(this.maxPaymentUpDown);
             this.Controls.Add(this.valueUpDown);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(509, 362);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(509, 362);
             this.Name = "Add";
             this.Text = "Dodaj stawkę podatkową";
             ((System.ComponentModel.ISupportInitialize)(this.valueUpDown)).EndInit();
@@ -212,6 +222,7 @@
         private System.Windows.Forms.NumericUpDown downPaymentUpDown;
         private System.Windows.Forms.Label guaranteedAmountLabel;
         private System.Windows.Forms.NumericUpDown guaranteedAmountUpDown;
-        private System.Windows.Forms.CheckBox freePaymentUnused;
+        private System.Windows.Forms.ComboBox taxFreeValue;
+        private System.Windows.Forms.Label freeTaxValueLabel;
     }
 }

@@ -17,10 +17,11 @@ namespace CSS_database_connection_tries
         {
             InitializeComponent();
             fillComboId();
+            fillComboFreeTaxValue();
         }
 
 
-        private int flagFreePayment = 1;
+        private int idFreePay;
         Connection connect = new Connection();
 
 
@@ -56,6 +57,64 @@ namespace CSS_database_connection_tries
         }
 
 
+        void fillComboFreeTaxValue()
+        {
+
+            string selectQuery = "SELECT * FROM taxpayer.freetaxvalue;";
+
+            MySqlConnection conn = new MySqlConnection(connect.connDetail);
+            MySqlCommand command = new MySqlCommand(selectQuery, conn);
+            MySqlDataReader queryReader;
+
+            try
+            {
+                conn.Open();
+
+                queryReader = command.ExecuteReader();
+
+                while (queryReader.Read())
+                {
+                    string value = queryReader.GetString("freePay");
+                    taxFreeValue.Items.Add(value);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        void getFreeTaxValue(int idfreetax)
+        {
+
+            string selectQuery = "SELECT * FROM taxpayer.freetaxvalue WHERE idfreetaxvalue = '" + idfreetax + "'; ";
+
+            MySqlConnection conn = new MySqlConnection(connect.connDetail);
+            MySqlCommand command = new MySqlCommand(selectQuery, conn);
+            MySqlDataReader queryReader;
+
+            try
+            {
+                conn.Open();
+
+                queryReader = command.ExecuteReader();
+
+                while (queryReader.Read())
+                {
+                    string value = queryReader.GetString("freePay");
+                    labelForTaxFreePayment.Text = value.ToString();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
         private void deleteButton_Click(object sender, EventArgs e)
         {
 
@@ -86,13 +145,10 @@ namespace CSS_database_connection_tries
         private void editButton_Click(object sender, EventArgs e)
         {
 
-            if (this.unusedFreePayment.Checked)
-            {
-                this.flagFreePayment = 0;
-            }
+           
 
             
-            string updateQuery = "UPDATE taxpayer.taxes SET value='"+valueUpDown.Value+"', guaranteedAmount='"+this.guaranteedAmountUpDown.Value+"', downPayment='"+this.downPaymentUpDown.Value+"', maxPayment='"+maxPaymentUpDown.Value+"', flagFreePayment='"+this.flagFreePayment+"', ' WHERE idtaxes='" + idCombo.Text + "' ;";
+            string updateQuery = "UPDATE taxpayer.taxes SET value='"+valueUpDown.Value+"', guaranteedAmount='"+this.guaranteedAmountUpDown.Value+"', downPayment='"+this.downPaymentUpDown.Value+"', maxPayment='"+maxPaymentUpDown.Value+ "', freetaxvalue_idfreetaxvalue='" + this.idFreePay + "' WHERE idtaxes='" + idCombo.Text + "' ;";
  
             MySqlConnection conn = new MySqlConnection(connect.connDetail);
             MySqlCommand command = new MySqlCommand(updateQuery, conn);
@@ -120,7 +176,7 @@ namespace CSS_database_connection_tries
         {
 
             
-            string insertQuery = "SELECT * FROM taxpayer.taxes WHERE flagT=1 AND idtaxes='"+idCombo.Text+"';";
+             string insertQuery = "SELECT * FROM taxpayer.taxes WHERE flagT=1 AND idtaxes='"+idCombo.Text+"';";
  
              MySqlConnection conn = new MySqlConnection(connect.connDetail);
              MySqlCommand command = new MySqlCommand(insertQuery, conn);
@@ -136,23 +192,18 @@ namespace CSS_database_connection_tries
 
                 while (queryReader.Read())
                 {
-                     string value = queryReader.GetString("value");
-                     string guaranteedAmount = queryReader.GetString("guaranteedAmount");
-                     string downPayment = queryReader.GetString("downPayment");
-                     string maxPayment = queryReader.GetString("maxPayment");
-                     int flagFreePayment = queryReader.GetInt32("flagFreePayment");
+                    string value = queryReader.GetString("value");
+                    string guaranteedAmount = queryReader.GetString("guaranteedAmount");
+                    string downPayment = queryReader.GetString("downPayment");
+                    string maxPayment = queryReader.GetString("maxPayment");
+                    int idFreePayment = queryReader.GetInt32("freetaxvalue_idfreetaxvalue");
 
                     labelForValue.Text = value;
                     labelForGuaranteedAmount.Text = guaranteedAmount;
                     labelForDownPayment.Text = downPayment;
                     labelForMaxPayment.Text = maxPayment;
 
-                    if (flagFreePayment == 0) {
-                        this.labelForTaxFreePaymentInfo.Text = "nieobowiązuje";
-                    } else if (flagFreePayment == 1)
-                    {
-                        this.labelForTaxFreePaymentInfo.Text = "obowiązuje";
-                    }
+                    getFreeTaxValue(idFreePayment);
 
                 }
 
@@ -167,6 +218,35 @@ namespace CSS_database_connection_tries
         private void UpdateDelete_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void taxFreeValue_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectQuery = "SELECT * FROM taxpayer.freetaxvalue WHERE freePay='" + taxFreeValue.Text + "';";
+
+            MySqlConnection conn = new MySqlConnection(connect.connDetail);
+            MySqlCommand command = new MySqlCommand(selectQuery, conn);
+
+            MySqlDataReader queryReader;
+
+            try
+            {
+                conn.Open();
+
+                queryReader = command.ExecuteReader();
+
+                while (queryReader.Read())
+                {
+
+                    idFreePay = queryReader.GetInt32("idfreetaxvalue");
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

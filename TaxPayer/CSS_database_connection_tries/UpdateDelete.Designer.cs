@@ -48,11 +48,12 @@
             this.labelForDownPayment = new System.Windows.Forms.Label();
             this.guaranteedAmountLabel2 = new System.Windows.Forms.Label();
             this.labelForGuaranteedAmount = new System.Windows.Forms.Label();
-            this.unusedFreePayment = new System.Windows.Forms.CheckBox();
             this.taxFreePaymentLabel = new System.Windows.Forms.Label();
-            this.labelForTaxFreePaymentInfo = new System.Windows.Forms.Label();
+            this.labelForTaxFreePayment = new System.Windows.Forms.Label();
             this.infoGroup = new System.Windows.Forms.GroupBox();
             this.editGroup = new System.Windows.Forms.GroupBox();
+            this.freePayLabel = new System.Windows.Forms.Label();
+            this.taxFreeValue = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.maxPaymentUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.valueUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.downPaymentUpDown)).BeginInit();
@@ -279,16 +280,6 @@
             this.labelForGuaranteedAmount.TabIndex = 24;
             this.labelForGuaranteedAmount.Text = "-";
             // 
-            // unusedFreePayment
-            // 
-            this.unusedFreePayment.AutoSize = true;
-            this.unusedFreePayment.Location = new System.Drawing.Point(42, 261);
-            this.unusedFreePayment.Name = "unusedFreePayment";
-            this.unusedFreePayment.Size = new System.Drawing.Size(215, 17);
-            this.unusedFreePayment.TabIndex = 26;
-            this.unusedFreePayment.Text = "Nie odlicza się kwoty wolnej od podatku";
-            this.unusedFreePayment.UseVisualStyleBackColor = true;
-            // 
             // taxFreePaymentLabel
             // 
             this.taxFreePaymentLabel.AutoSize = true;
@@ -298,20 +289,20 @@
             this.taxFreePaymentLabel.TabIndex = 27;
             this.taxFreePaymentLabel.Text = "Kwota wolna od podatku: ";
             // 
-            // labelForTaxFreePaymentInfo
+            // labelForTaxFreePayment
             // 
-            this.labelForTaxFreePaymentInfo.AutoSize = true;
-            this.labelForTaxFreePaymentInfo.Location = new System.Drawing.Point(21, 314);
-            this.labelForTaxFreePaymentInfo.Name = "labelForTaxFreePaymentInfo";
-            this.labelForTaxFreePaymentInfo.Size = new System.Drawing.Size(10, 13);
-            this.labelForTaxFreePaymentInfo.TabIndex = 28;
-            this.labelForTaxFreePaymentInfo.Text = "-";
+            this.labelForTaxFreePayment.AutoSize = true;
+            this.labelForTaxFreePayment.Location = new System.Drawing.Point(21, 314);
+            this.labelForTaxFreePayment.Name = "labelForTaxFreePayment";
+            this.labelForTaxFreePayment.Size = new System.Drawing.Size(10, 13);
+            this.labelForTaxFreePayment.TabIndex = 28;
+            this.labelForTaxFreePayment.Text = "-";
             // 
             // infoGroup
             // 
             this.infoGroup.Controls.Add(this.valueLabel2);
             this.infoGroup.Controls.Add(this.labelForValue);
-            this.infoGroup.Controls.Add(this.labelForTaxFreePaymentInfo);
+            this.infoGroup.Controls.Add(this.labelForTaxFreePayment);
             this.infoGroup.Controls.Add(this.labelForMaxPayment);
             this.infoGroup.Controls.Add(this.taxFreePaymentLabel);
             this.infoGroup.Controls.Add(this.maxPayment2);
@@ -329,10 +320,11 @@
             // 
             // editGroup
             // 
+            this.editGroup.Controls.Add(this.freePayLabel);
+            this.editGroup.Controls.Add(this.taxFreeValue);
             this.editGroup.Controls.Add(this.valueUpDown);
             this.editGroup.Controls.Add(this.maxPaymentUpDown);
             this.editGroup.Controls.Add(this.editButton);
-            this.editGroup.Controls.Add(this.unusedFreePayment);
             this.editGroup.Controls.Add(this.valueLabel);
             this.editGroup.Controls.Add(this.downPaymentLabel);
             this.editGroup.Controls.Add(this.maxPayment);
@@ -345,6 +337,24 @@
             this.editGroup.TabIndex = 30;
             this.editGroup.TabStop = false;
             this.editGroup.Text = "Pole edycji kwoty podatku";
+            // 
+            // freePayLabel
+            // 
+            this.freePayLabel.AutoSize = true;
+            this.freePayLabel.Location = new System.Drawing.Point(39, 251);
+            this.freePayLabel.Name = "freePayLabel";
+            this.freePayLabel.Size = new System.Drawing.Size(125, 13);
+            this.freePayLabel.TabIndex = 28;
+            this.freePayLabel.Text = "Kwota wolna od podatku";
+            // 
+            // taxFreeValue
+            // 
+            this.taxFreeValue.FormattingEnabled = true;
+            this.taxFreeValue.Location = new System.Drawing.Point(42, 290);
+            this.taxFreeValue.Name = "taxFreeValue";
+            this.taxFreeValue.Size = new System.Drawing.Size(120, 21);
+            this.taxFreeValue.TabIndex = 27;
+            this.taxFreeValue.SelectedIndexChanged += new System.EventHandler(this.taxFreeValue_SelectedIndexChanged);
             // 
             // UpdateDelete
             // 
@@ -397,10 +407,11 @@
         private System.Windows.Forms.Label labelForDownPayment;
         private System.Windows.Forms.Label guaranteedAmountLabel2;
         private System.Windows.Forms.Label labelForGuaranteedAmount;
-        private System.Windows.Forms.CheckBox unusedFreePayment;
         private System.Windows.Forms.Label taxFreePaymentLabel;
-        private System.Windows.Forms.Label labelForTaxFreePaymentInfo;
+        private System.Windows.Forms.Label labelForTaxFreePayment;
         private System.Windows.Forms.GroupBox infoGroup;
         private System.Windows.Forms.GroupBox editGroup;
+        private System.Windows.Forms.Label freePayLabel;
+        private System.Windows.Forms.ComboBox taxFreeValue;
     }
 }

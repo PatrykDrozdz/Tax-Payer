@@ -41,16 +41,19 @@
             this.helpToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.outcommeHealthLabel = new System.Windows.Forms.Label();
             this.outcommeHealthUpDown = new System.Windows.Forms.NumericUpDown();
+            this.IncommeCostsLabel = new System.Windows.Forms.Label();
+            this.IncommeCostsUpDown = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.incommeUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.outcommeSocialUpDown)).BeginInit();
             this.menuMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.outcommeHealthUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IncommeCostsUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // incommeLabel
             // 
             this.incommeLabel.AutoSize = true;
-            this.incommeLabel.Location = new System.Drawing.Point(142, 24);
+            this.incommeLabel.Location = new System.Drawing.Point(95, 46);
             this.incommeLabel.Name = "incommeLabel";
             this.incommeLabel.Size = new System.Drawing.Size(105, 13);
             this.incommeLabel.TabIndex = 0;
@@ -58,7 +61,7 @@
             // 
             // openChecking
             // 
-            this.openChecking.Location = new System.Drawing.Point(145, 270);
+            this.openChecking.Location = new System.Drawing.Point(98, 399);
             this.openChecking.Name = "openChecking";
             this.openChecking.Size = new System.Drawing.Size(120, 46);
             this.openChecking.TabIndex = 1;
@@ -74,7 +77,7 @@
             0,
             0,
             0});
-            this.incommeUpDown.Location = new System.Drawing.Point(145, 62);
+            this.incommeUpDown.Location = new System.Drawing.Point(98, 84);
             this.incommeUpDown.Maximum = new decimal(new int[] {
             276447232,
             23283,
@@ -92,7 +95,7 @@
             0,
             0,
             0});
-            this.outcommeSocialUpDown.Location = new System.Drawing.Point(145, 147);
+            this.outcommeSocialUpDown.Location = new System.Drawing.Point(98, 274);
             this.outcommeSocialUpDown.Maximum = new decimal(new int[] {
             276447232,
             23283,
@@ -105,7 +108,7 @@
             // outcommeSocialLabel
             // 
             this.outcommeSocialLabel.AutoSize = true;
-            this.outcommeSocialLabel.Location = new System.Drawing.Point(71, 109);
+            this.outcommeSocialLabel.Location = new System.Drawing.Point(24, 236);
             this.outcommeSocialLabel.Name = "outcommeSocialLabel";
             this.outcommeSocialLabel.Size = new System.Drawing.Size(269, 13);
             this.outcommeSocialLabel.TabIndex = 4;
@@ -118,7 +121,7 @@
             this.helpToolStripMenuItem});
             this.menuMain.Location = new System.Drawing.Point(0, 0);
             this.menuMain.Name = "menuMain";
-            this.menuMain.Size = new System.Drawing.Size(426, 24);
+            this.menuMain.Size = new System.Drawing.Size(323, 24);
             this.menuMain.TabIndex = 5;
             this.menuMain.Text = "Główne Menu";
             // 
@@ -134,14 +137,14 @@
             // logInToolStripMenuItem
             // 
             this.logInToolStripMenuItem.Name = "logInToolStripMenuItem";
-            this.logInToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.logInToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.logInToolStripMenuItem.Text = "Zaloguj się";
             this.logInToolStripMenuItem.Click += new System.EventHandler(this.LogInToolStripMenuItem_Click);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.closeToolStripMenuItem.Text = "Zamknij";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
@@ -156,14 +159,14 @@
             // helpToolStripMenuItem2
             // 
             this.helpToolStripMenuItem2.Name = "helpToolStripMenuItem2";
-            this.helpToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.helpToolStripMenuItem2.Size = new System.Drawing.Size(112, 22);
             this.helpToolStripMenuItem2.Text = "Pomoc";
             this.helpToolStripMenuItem2.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // outcommeHealthLabel
             // 
             this.outcommeHealthLabel.AutoSize = true;
-            this.outcommeHealthLabel.Location = new System.Drawing.Point(71, 196);
+            this.outcommeHealthLabel.Location = new System.Drawing.Point(24, 323);
             this.outcommeHealthLabel.Name = "outcommeHealthLabel";
             this.outcommeHealthLabel.Size = new System.Drawing.Size(276, 13);
             this.outcommeHealthLabel.TabIndex = 6;
@@ -177,7 +180,7 @@
             0,
             0,
             0});
-            this.outcommeHealthUpDown.Location = new System.Drawing.Point(145, 224);
+            this.outcommeHealthUpDown.Location = new System.Drawing.Point(98, 351);
             this.outcommeHealthUpDown.Maximum = new decimal(new int[] {
             276447232,
             23283,
@@ -187,11 +190,40 @@
             this.outcommeHealthUpDown.Size = new System.Drawing.Size(120, 20);
             this.outcommeHealthUpDown.TabIndex = 7;
             // 
+            // IncommeCostsLabel
+            // 
+            this.IncommeCostsLabel.AutoSize = true;
+            this.IncommeCostsLabel.Location = new System.Drawing.Point(68, 136);
+            this.IncommeCostsLabel.Name = "IncommeCostsLabel";
+            this.IncommeCostsLabel.Size = new System.Drawing.Size(172, 13);
+            this.IncommeCostsLabel.TabIndex = 9;
+            this.IncommeCostsLabel.Text = "KOSZTY UZYSKANIA DOCHODU";
+            // 
+            // IncommeCostsUpDown
+            // 
+            this.IncommeCostsUpDown.DecimalPlaces = 2;
+            this.IncommeCostsUpDown.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.IncommeCostsUpDown.Location = new System.Drawing.Point(98, 174);
+            this.IncommeCostsUpDown.Maximum = new decimal(new int[] {
+            276447232,
+            23283,
+            0,
+            0});
+            this.IncommeCostsUpDown.Name = "IncommeCostsUpDown";
+            this.IncommeCostsUpDown.Size = new System.Drawing.Size(120, 20);
+            this.IncommeCostsUpDown.TabIndex = 8;
+            // 
             // AddingDatasToCount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(426, 345);
+            this.ClientSize = new System.Drawing.Size(323, 466);
+            this.Controls.Add(this.IncommeCostsLabel);
+            this.Controls.Add(this.IncommeCostsUpDown);
             this.Controls.Add(this.outcommeHealthUpDown);
             this.Controls.Add(this.outcommeHealthLabel);
             this.Controls.Add(this.outcommeSocialLabel);
@@ -202,9 +234,9 @@
             this.Controls.Add(this.menuMain);
             this.MainMenuStrip = this.menuMain;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(442, 383);
+            this.MaximumSize = new System.Drawing.Size(339, 504);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(442, 383);
+            this.MinimumSize = new System.Drawing.Size(339, 504);
             this.Name = "AddingDatasToCount";
             this.Text = "Sprawdź swoje podatki";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.addingDatasToCount_FormClosing);
@@ -213,6 +245,7 @@
             this.menuMain.ResumeLayout(false);
             this.menuMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.outcommeHealthUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IncommeCostsUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,5 +266,7 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem2;
         private System.Windows.Forms.Label outcommeHealthLabel;
         private System.Windows.Forms.NumericUpDown outcommeHealthUpDown;
+        private System.Windows.Forms.Label IncommeCostsLabel;
+        private System.Windows.Forms.NumericUpDown IncommeCostsUpDown;
     }
 }

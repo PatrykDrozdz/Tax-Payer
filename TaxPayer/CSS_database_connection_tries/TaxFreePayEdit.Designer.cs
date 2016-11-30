@@ -30,9 +30,9 @@
         {
             this.taxFreePaymentLabel = new System.Windows.Forms.Label();
             this.updateFreePaymentTax = new System.Windows.Forms.Button();
-            this.taxFreePaymentToShow = new System.Windows.Forms.Label();
             this.taxFreePaymentUpDown = new System.Windows.Forms.NumericUpDown();
             this.taxFreePaymentLabel2 = new System.Windows.Forms.Label();
+            this.taxFreeValue = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.taxFreePaymentUpDown)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,22 +47,13 @@
             // 
             // updateFreePaymentTax
             // 
-            this.updateFreePaymentTax.Location = new System.Drawing.Point(45, 180);
+            this.updateFreePaymentTax.Location = new System.Drawing.Point(45, 179);
             this.updateFreePaymentTax.Name = "updateFreePaymentTax";
             this.updateFreePaymentTax.Size = new System.Drawing.Size(152, 47);
             this.updateFreePaymentTax.TabIndex = 1;
             this.updateFreePaymentTax.Text = "Aktualizuj";
             this.updateFreePaymentTax.UseVisualStyleBackColor = true;
             this.updateFreePaymentTax.Click += new System.EventHandler(this.updateFreePaymentTax_Click);
-            // 
-            // taxFreePaymentToShow
-            // 
-            this.taxFreePaymentToShow.AutoSize = true;
-            this.taxFreePaymentToShow.Location = new System.Drawing.Point(42, 60);
-            this.taxFreePaymentToShow.Name = "taxFreePaymentToShow";
-            this.taxFreePaymentToShow.Size = new System.Drawing.Size(10, 13);
-            this.taxFreePaymentToShow.TabIndex = 2;
-            this.taxFreePaymentToShow.Text = "-";
             // 
             // taxFreePaymentUpDown
             // 
@@ -91,14 +82,22 @@
             this.taxFreePaymentLabel2.TabIndex = 5;
             this.taxFreePaymentLabel2.Text = "Kwota wolna od podatku do aktualizacji";
             // 
+            // taxFreeValue
+            // 
+            this.taxFreeValue.FormattingEnabled = true;
+            this.taxFreeValue.Location = new System.Drawing.Point(45, 67);
+            this.taxFreeValue.Name = "taxFreeValue";
+            this.taxFreeValue.Size = new System.Drawing.Size(120, 21);
+            this.taxFreeValue.TabIndex = 28;
+            // 
             // TaxFreePayEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(259, 251);
+            this.ClientSize = new System.Drawing.Size(259, 252);
+            this.Controls.Add(this.taxFreeValue);
             this.Controls.Add(this.taxFreePaymentLabel2);
             this.Controls.Add(this.taxFreePaymentUpDown);
-            this.Controls.Add(this.taxFreePaymentToShow);
             this.Controls.Add(this.updateFreePaymentTax);
             this.Controls.Add(this.taxFreePaymentLabel);
             this.MaximizeBox = false;
@@ -117,8 +116,8 @@
 
         private System.Windows.Forms.Label taxFreePaymentLabel;
         private System.Windows.Forms.Button updateFreePaymentTax;
-        private System.Windows.Forms.Label taxFreePaymentToShow;
         private System.Windows.Forms.NumericUpDown taxFreePaymentUpDown;
         private System.Windows.Forms.Label taxFreePaymentLabel2;
+        private System.Windows.Forms.ComboBox taxFreeValue;
     }
 }

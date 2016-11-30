@@ -94,7 +94,7 @@ namespace CSS_database_connection_tries
                 maxPaymentTab = new double[this.countValues];
                 flagFreePaymentTab = new double[this.countValues];
 
-                this.payment = add.Incomme - add.OutcommeSocial;
+                this.payment = add.Incomme - add.OutcommeSocial - add.IncommeCosts;
 
                  
               
@@ -104,7 +104,6 @@ namespace CSS_database_connection_tries
                     this.guaranteedAmountTab[i] = queryReader.GetDouble("guaranteedAmount");
                     this.downPaymentTab[i] = queryReader.GetDouble("downPayment");
                     this.maxPaymentTab[i] = queryReader.GetDouble("maxPayment");
-                    this.flagFreePaymentTab[i] = queryReader.GetDouble("flagFreePayment");
                     i = i + 1;
  
                 }

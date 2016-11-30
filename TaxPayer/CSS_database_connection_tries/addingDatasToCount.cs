@@ -20,6 +20,7 @@ namespace CSS_database_connection_tries
         }
 
         private double incomme;
+        private double incommeCosts;
         private double outcommeHealth;
         private double outcommeSocial;
 
@@ -64,6 +65,21 @@ namespace CSS_database_connection_tries
             }
 
         }
+
+        public double IncommeCosts
+        {
+
+            get
+            {
+                return this.incommeCosts; 
+            }
+
+            set
+            {
+                this.incommeCosts = value;
+            }
+
+        }
         
 
         private void LogInToolStripMenuItem_Click(object sender, EventArgs e)
@@ -88,6 +104,8 @@ namespace CSS_database_connection_tries
             //this.Incomme((double)this.incommeUpDown.Value);
 
             this.Incomme = (double)this.incommeUpDown.Value;
+
+            this.IncommeCosts = (double)this.IncommeCostsUpDown.Value;
 
             this.OutcommeSocial = (double)this.outcommeSocialUpDown.Value;
 

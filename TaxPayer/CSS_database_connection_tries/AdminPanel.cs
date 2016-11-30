@@ -32,22 +32,20 @@ namespace CSS_database_connection_tries
   
             MySqlConnection conn = new MySqlConnection(connect.connDetail);
             MySqlCommand command = new MySqlCommand(selectQuery, conn);
-            MySqlDataReader queryReader;
 
             try
             {
-                conn.Open();
+                MySqlDataAdapter adaptData = new MySqlDataAdapter();
+                DataTable dbDatas = new DataTable();
+                BindingSource bSource = new BindingSource();
 
-                queryReader = command.ExecuteReader();
+                adaptData.SelectCommand = command;
+                adaptData.Fill(dbDatas);
 
+                bSource.DataSource = dbDatas;
+                freePaysShow.DataSource = bSource;
+                adaptData.Update(dbDatas);
 
-                while (queryReader.Read())
-                {
-
-                    string freePayTax = queryReader.GetString("freePay");
-
-                    freePayShow.Text = freePayTax;
-                }
 
             }
             catch (Exception ex)
@@ -127,11 +125,7 @@ namespace CSS_database_connection_tries
             this.Close();
         }
 
-        private void addValueToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-			Add adDel = new Add();
-            adDel.ShowDialog();
-        }
+
 
         private void freeValueToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -186,6 +180,16 @@ namespace CSS_database_connection_tries
             addAdmin.ShowDialog();
         }
 
+        private void addTaxValueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Add adDel = new Add();
+            adDel.ShowDialog();
+        }
 
+        private void freePatValueAddToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddFreeTaxValue addFree = new AddFreeTaxValue();
+            addFree.ShowDialog();
+        }
     }
 }

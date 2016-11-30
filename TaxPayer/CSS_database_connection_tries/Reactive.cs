@@ -51,6 +51,35 @@ namespace CSS_database_connection_tries
 
         }
 
+        void getFreeTaxValue(int idfreetax)
+        {
+
+            string selectQuery = "SELECT * FROM taxpayer.freetaxvalue WHERE idfreetaxvalue = '" + idfreetax + "'; ";
+
+            MySqlConnection conn = new MySqlConnection(connect.connDetail);
+            MySqlCommand command = new MySqlCommand(selectQuery, conn);
+            MySqlDataReader queryReader;
+
+            try
+            {
+                conn.Open();
+
+                queryReader = command.ExecuteReader();
+
+                while (queryReader.Read())
+                {
+                    string value = queryReader.GetString("freePay");
+                    labelForTaxFreePayment.Text = value.ToString();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
         private void idCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
             
@@ -74,21 +103,14 @@ namespace CSS_database_connection_tries
                    string guaranteedAmount = queryReader.GetString("guaranteedAmount");
                    string downPayment = queryReader.GetString("downPayment");
                    string maxPayment = queryReader.GetString("maxPayment");
-                   int flagFreePayment = queryReader.GetInt32("flagFreePayment");
+                   int idFreePayment = queryReader.GetInt32("freetaxvalue_idfreetaxvalue");
 
                     labelForValue.Text = value;
                     labelForGuaranteedAmount.Text = guaranteedAmount;
                     labelForDownPayment.Text = downPayment;
                     labelForMaxPayment.Text = maxPayment;
 
-                    if (flagFreePayment == 0)
-                    {
-                        this.labelForTaxFreePaymentInfo.Text = "nieobowiązuje";
-                    }
-                    else if (flagFreePayment == 1)
-                    {
-                        this.labelForTaxFreePaymentInfo.Text = "obowiązuje";
-                    }
+                    getFreeTaxValue(idFreePayment);
 
                 }
 

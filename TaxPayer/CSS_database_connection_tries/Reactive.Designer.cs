@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelForTaxFreePaymentInfo = new System.Windows.Forms.Label();
+            this.labelForTaxFreePayment = new System.Windows.Forms.Label();
             this.taxFreePaymentLabel = new System.Windows.Forms.Label();
             this.guaranteedAmountLabel2 = new System.Windows.Forms.Label();
             this.labelForGuaranteedAmount = new System.Windows.Forms.Label();
@@ -43,14 +43,14 @@
             this.reactiveButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // labelForTaxFreePaymentInfo
+            // labelForTaxFreePayment
             // 
-            this.labelForTaxFreePaymentInfo.AutoSize = true;
-            this.labelForTaxFreePaymentInfo.Location = new System.Drawing.Point(47, 328);
-            this.labelForTaxFreePaymentInfo.Name = "labelForTaxFreePaymentInfo";
-            this.labelForTaxFreePaymentInfo.Size = new System.Drawing.Size(10, 13);
-            this.labelForTaxFreePaymentInfo.TabIndex = 40;
-            this.labelForTaxFreePaymentInfo.Text = "-";
+            this.labelForTaxFreePayment.AutoSize = true;
+            this.labelForTaxFreePayment.Location = new System.Drawing.Point(47, 328);
+            this.labelForTaxFreePayment.Name = "labelForTaxFreePayment";
+            this.labelForTaxFreePayment.Size = new System.Drawing.Size(10, 13);
+            this.labelForTaxFreePayment.TabIndex = 40;
+            this.labelForTaxFreePayment.Text = "-";
             // 
             // taxFreePaymentLabel
             // 
@@ -169,7 +169,7 @@
             this.Controls.Add(this.reactiveButton);
             this.Controls.Add(this.idLabel);
             this.Controls.Add(this.idCombo);
-            this.Controls.Add(this.labelForTaxFreePaymentInfo);
+            this.Controls.Add(this.labelForTaxFreePayment);
             this.Controls.Add(this.taxFreePaymentLabel);
             this.Controls.Add(this.guaranteedAmountLabel2);
             this.Controls.Add(this.labelForGuaranteedAmount);
@@ -192,7 +192,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label labelForTaxFreePaymentInfo;
+        private System.Windows.Forms.Label labelForTaxFreePayment;
         private System.Windows.Forms.Label taxFreePaymentLabel;
         private System.Windows.Forms.Label guaranteedAmountLabel2;
         private System.Windows.Forms.Label labelForGuaranteedAmount;

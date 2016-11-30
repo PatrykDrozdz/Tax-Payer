@@ -40,9 +40,8 @@ namespace CSS_database_connection_tries
                 while (queryReader.Read())
                 {
 
-                    string freePayTax = queryReader.GetString("freePay");
-
-                    taxFreePaymentToShow.Text = freePayTax;
+                    string value = queryReader.GetString("freePay");
+                    taxFreeValue.Items.Add(value);
                 }
 
             }
@@ -56,7 +55,7 @@ namespace CSS_database_connection_tries
         private void updateFreePaymentTax_Click(object sender, EventArgs e)
         {
 
-			string updateQuery = "UPDATE taxpayer.freetaxvalue SET freePay='"+taxFreePaymentUpDown.Value+"' WHERE idfreeTaxValue='1';";
+			string updateQuery = "UPDATE taxpayer.freetaxvalue SET freePay='"+taxFreePaymentUpDown.Value+"' WHERE freePay = '"+ taxFreeValue.Text + "';";
 
   
             MySqlConnection conn = new MySqlConnection(connect.connDetail);
