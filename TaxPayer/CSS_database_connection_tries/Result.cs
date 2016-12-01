@@ -21,9 +21,9 @@ namespace CSS_database_connection_tries
         List<double> guaranteedAmounts = new List<double>();
         List<double> downPayments = new List<double>();
         List<double> maxPayments = new List<double>();
-        List<double> freeTaxValues = new List<double>();
         List<int> freeTaxFlags = new List<int>();
         double payment;
+        double result;
 
         public Result(AddingDatasToCount add)
         {
@@ -32,10 +32,11 @@ namespace CSS_database_connection_tries
             counting();
         }
 
-        void getTaxFreePayment()
+        double getTaxFreePayment(int idfreetaxpay)
         {
 
-			string selectQuery = "SELECT * FROM taxpayer.freetaxvalue;";
+			string selectQuery = "SELECT * FROM taxpayer.freetaxvalue WHERE idfreetaxvalue = '"+idfreetaxpay+"';";
+            
 			
 			MySqlConnection conn = new MySqlConnection(connect.connDetail);
             MySqlCommand command = new MySqlCommand(selectQuery, conn);
@@ -51,22 +52,25 @@ namespace CSS_database_connection_tries
 
                 while (queryReader.Read())
                 {
-                    this.freeTaxValues.Add(queryReader.GetDouble("freePay"));
+                    result = queryReader.GetDouble("freePay");
                 }
 
                 
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
 
+            return result;
+
         }
 
 
         void counting()
         {
-            getTaxFreePayment();
+            //getTaxFreePayment();
 
             string selectQuery = "SELECT * FROM taxpayer.taxes WHERE flagT=1;";
 			
@@ -96,17 +100,32 @@ namespace CSS_database_connection_tries
 
                 this.results = new double[this.values.Count];
 
-                for(int i=0; i<this.values.Count; i++)
+                int i = 0;
+                while (i<this.values.Count)
                 {
+                    this.results[i] = (this.guaranteedAmounts[i] + (this.payment - this.downPayments[i] -
+                        getTaxFreePayment(this.freeTaxFlags[i])) * this.values[i]) - add.OutcommeHealth;
 
-                    //this.freeTaxFlags[i];
-                    this.results[i] = (this.guaranteedAmounts[i] + (this.payment - this.downPayments[i] - 3091
-                        ) * this.values[i]) - add.OutcommeHealth;
+                    if (/*maxPayments[i] != 0 &&*/ maxPayments[i] >= this.payment)
+                    {
+                        this.taxValueCount.Text = results[i].ToString();
+                        this.taxValue.Text = this.values[i].ToString();
+                    }
+                    if (maxPayments[i] < this.payment /*&& maxPayments[i]!=0*/)
+                    {
+                        i++;
+                    }
+
+                    if(i== (this.values.Count - 1))
+                    {
+                        i = 0;
+                    }
+                    i++;
                 }
 
-                this.taxValue.Text = results[0].ToString();
+                //this.taxValue.Text = results[1].ToString();
                 //this.taxValueCount.Text = this.values[0].ToString();
-                this.taxValueCount.Text = 3091.ToString();
+                //this.taxValueCount.Text = getTaxFreePayment(3).ToString();
             }
             catch (Exception ex)
             {
