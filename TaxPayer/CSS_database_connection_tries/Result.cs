@@ -16,14 +16,17 @@ namespace CSS_database_connection_tries
 
         AddingDatasToCount add;
         Connection connect = new Connection();
-        double[] results;
         List<double> values = new List<double>();
         List<double> guaranteedAmounts = new List<double>();
         List<double> downPayments = new List<double>();
         List<double> maxPayments = new List<double>();
         List<int> freeTaxFlags = new List<int>();
-        double payment;
-        double result;
+        private double payment;
+        private double result;
+        private double prog;
+        private double line;
+        private double taxProg;
+        private double taxLine;
 
         public Result(AddingDatasToCount add)
         {
@@ -70,7 +73,6 @@ namespace CSS_database_connection_tries
 
         void counting()
         {
-            //getTaxFreePayment();
 
             string selectQuery = "SELECT * FROM taxpayer.taxes WHERE flagT=1;";
 			
@@ -98,34 +100,60 @@ namespace CSS_database_connection_tries
 
                 this.payment = add.Incomme - add.OutcommeSocial - add.IncommeCosts;
 
-                this.results = new double[this.values.Count];
-
-                int i = 0;
-                while (i<this.values.Count)
+                for(int i=0; i<this.values.Count; i++)
                 {
-                    this.results[i] = (this.guaranteedAmounts[i] + (this.payment - this.downPayments[i] -
+
+                    if (maxPayments[i] >= this.payment && downPayments[i] < this.payment)
+                    {//progresja - pośrednie podatki
+                        prog = (this.guaranteedAmounts[i] + (this.payment - this.downPayments[i] -
                         getTaxFreePayment(this.freeTaxFlags[i])) * this.values[i]) - add.OutcommeHealth;
+                        taxProg = values[i];
 
-                    if (/*maxPayments[i] != 0 &&*/ maxPayments[i] >= this.payment)
-                    {
-                        this.taxValueCount.Text = results[i].ToString();
-                        this.taxValue.Text = this.values[i].ToString();
                     }
-                    if (maxPayments[i] < this.payment /*&& maxPayments[i]!=0*/)
-                    {
-                        i++;
+                    else if (maxPayments[i] == 0 && downPayments[i] == 0)
+                    {//liniowy podatek
+                        line = (this.guaranteedAmounts[i] + (this.payment - this.downPayments[i] -
+                        getTaxFreePayment(this.freeTaxFlags[i])) * this.values[i]) - add.OutcommeHealth;
+                        taxLine = values[i];
+                    }
+                    else if(maxPayments[i]==0 && downPayments[i] != 0 && payment>this.downPayments[i])
+                    {//progresja - najwyższa stawka
+                        prog = (this.guaranteedAmounts[i] + (this.payment - this.downPayments[i] -
+                        getTaxFreePayment(this.freeTaxFlags[i])) * this.values[i]) - add.OutcommeHealth;
+                        taxProg = values[i];
                     }
 
-                    if(i== (this.values.Count - 1))
+                    if (prog < 0)
                     {
-                        i = 0;
+                        prog = 0;
                     }
-                    i++;
+
+                    if (line < 0)
+                    {
+                        line = 0;
+                    }
+
                 }
 
-                //this.taxValue.Text = results[1].ToString();
-                //this.taxValueCount.Text = this.values[0].ToString();
-                //this.taxValueCount.Text = getTaxFreePayment(3).ToString();
+                prog = Math.Round(prog);
+                line = Math.Round(line);
+
+                if (prog < line)
+                {
+                    this.taxValueCount.Text = prog.ToString();
+                    this.taxValue.Text = taxProg.ToString();
+                }
+                else if(prog > line)
+                {
+                    this.taxValueCount.Text = line.ToString();
+                    this.taxValue.Text = taxLine.ToString();
+                }
+                else
+                {
+                    this.taxValueCount.Text = prog.ToString();
+                    this.taxValue.Text = taxProg.ToString();
+                }
+
             }
             catch (Exception ex)
             {
