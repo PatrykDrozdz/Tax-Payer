@@ -144,21 +144,12 @@ namespace CSS_database_connection_tries
                 prog = Math.Round(prog);
                 line = Math.Round(line);
 
-                if (prog < line)
-                {
-                    this.taxValueCount.Text = prog.ToString();
-                    this.taxValue.Text = (taxProg+"%").ToString();
-                }
-                else if(prog > line)
-                {
-                    this.taxValueCount.Text = line.ToString();
-                    this.taxValue.Text = (taxLine+"%").ToString();
-                }
-                else
-                {
-                    this.taxValueCount.Text = prog.ToString();
-                    this.taxValue.Text = (taxProg+"%").ToString();
-                }
+                this.taxValueCount.Text = prog.ToString();
+                this.taxValue.Text = (taxProg + "%").ToString();
+
+                this.taxValueCountLine.Text = line.ToString();
+                this.taxValueLine.Text = (taxLine + "%").ToString();
+
 
             }
             catch (Exception ex)
