@@ -34,6 +34,12 @@ namespace CSS_database_connection_tries
             this.add = add;
             counting();
         }
+		
+		double changeToProcents(double taxValue){
+			
+			return (taxValue * 100);
+			
+		}
 
         double getTaxFreePayment(int idfreetaxpay)
         {
@@ -107,20 +113,20 @@ namespace CSS_database_connection_tries
                     {//progresja - pośrednie podatki
                         prog = (this.guaranteedAmounts[i] + (this.payment - this.downPayments[i] -
                         getTaxFreePayment(this.freeTaxFlags[i])) * this.values[i]) - add.OutcommeHealth;
-                        taxProg = values[i];
+                        taxProg = changeToProcents(values[i]);
 
                     }
                     else if (maxPayments[i] == 0 && downPayments[i] == 0)
                     {//liniowy podatek
                         line = (this.guaranteedAmounts[i] + (this.payment - this.downPayments[i] -
                         getTaxFreePayment(this.freeTaxFlags[i])) * this.values[i]) - add.OutcommeHealth;
-                        taxLine = values[i];
+                        taxLine = changeToProcents(values[i]);
                     }
                     else if(maxPayments[i]==0 && downPayments[i] != 0 && payment>this.downPayments[i])
                     {//progresja - najwyższa stawka
                         prog = (this.guaranteedAmounts[i] + (this.payment - this.downPayments[i] -
                         getTaxFreePayment(this.freeTaxFlags[i])) * this.values[i]) - add.OutcommeHealth;
-                        taxProg = values[i];
+                        taxProg = changeToProcents(values[i]);
                     }
 
                     if (prog < 0)
@@ -141,17 +147,17 @@ namespace CSS_database_connection_tries
                 if (prog < line)
                 {
                     this.taxValueCount.Text = prog.ToString();
-                    this.taxValue.Text = taxProg.ToString();
+                    this.taxValue.Text = (taxProg+"%").ToString();
                 }
                 else if(prog > line)
                 {
                     this.taxValueCount.Text = line.ToString();
-                    this.taxValue.Text = taxLine.ToString();
+                    this.taxValue.Text = (taxLine+"%").ToString();
                 }
                 else
                 {
                     this.taxValueCount.Text = prog.ToString();
-                    this.taxValue.Text = taxProg.ToString();
+                    this.taxValue.Text = (taxProg+"%").ToString();
                 }
 
             }
