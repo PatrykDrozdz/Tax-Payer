@@ -47,13 +47,10 @@
             this.dodajAdministratoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.edytujSwojeKontoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showAllDatas = new System.Windows.Forms.DataGridView();
-            this.freePayLabel = new System.Windows.Forms.Label();
             this.info_label = new System.Windows.Forms.Label();
             this.taxelLabel = new System.Windows.Forms.Label();
-            this.freePaysShow = new System.Windows.Forms.DataGridView();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.showAllDatas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.freePaysShow)).BeginInit();
             this.SuspendLayout();
             // 
             // mainMenu
@@ -65,7 +62,7 @@
             this.administratcjaToolStripMenuItem});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(1049, 24);
+            this.mainMenu.Size = new System.Drawing.Size(784, 24);
             this.mainMenu.TabIndex = 16;
             this.mainMenu.Text = "Główne menu";
             // 
@@ -203,20 +200,10 @@
             // showAllDatas
             // 
             this.showAllDatas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.showAllDatas.Location = new System.Drawing.Point(17, 88);
+            this.showAllDatas.Location = new System.Drawing.Point(17, 84);
             this.showAllDatas.Name = "showAllDatas";
-            this.showAllDatas.Size = new System.Drawing.Size(739, 358);
+            this.showAllDatas.Size = new System.Drawing.Size(743, 358);
             this.showAllDatas.TabIndex = 17;
-            // 
-            // freePayLabel
-            // 
-            this.freePayLabel.AutoSize = true;
-            this.freePayLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.freePayLabel.Location = new System.Drawing.Point(779, 34);
-            this.freePayLabel.Name = "freePayLabel";
-            this.freePayLabel.Size = new System.Drawing.Size(251, 25);
-            this.freePayLabel.TabIndex = 18;
-            this.freePayLabel.Text = "Kwoty wolna od podatku:";
             // 
             // info_label
             // 
@@ -238,37 +225,27 @@
             this.taxelLabel.TabIndex = 24;
             this.taxelLabel.Text = "Stawki podatkowe:";
             // 
-            // freePaysShow
-            // 
-            this.freePaysShow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.freePaysShow.Location = new System.Drawing.Point(784, 88);
-            this.freePaysShow.Name = "freePaysShow";
-            this.freePaysShow.Size = new System.Drawing.Size(244, 358);
-            this.freePaysShow.TabIndex = 25;
-            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1049, 501);
-            this.Controls.Add(this.freePaysShow);
+            this.ClientSize = new System.Drawing.Size(784, 501);
             this.Controls.Add(this.taxelLabel);
             this.Controls.Add(this.info_label);
-            this.Controls.Add(this.freePayLabel);
             this.Controls.Add(this.showAllDatas);
             this.Controls.Add(this.mainMenu);
             this.MainMenuStrip = this.mainMenu;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1065, 540);
+            this.MaximumSize = new System.Drawing.Size(800, 540);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1065, 540);
+            this.MinimumSize = new System.Drawing.Size(800, 540);
             this.Name = "AdminPanel";
             this.Text = "Panel administracyjny";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminPanel_FormClosing);
+            this.Load += new System.EventHandler(this.AdminPanel_Load);
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.showAllDatas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.freePaysShow)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,14 +264,12 @@
         private System.Windows.Forms.ToolStripMenuItem taxValueToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem freeValueToolStripMenuItem;
         private System.Windows.Forms.DataGridView showAllDatas;
-        private System.Windows.Forms.Label freePayLabel;
         private System.Windows.Forms.ToolStripMenuItem refreashToolStripMenuItem;
         private System.Windows.Forms.Label info_label;
         private System.Windows.Forms.ToolStripMenuItem reactiveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem administratcjaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dodajAdministratoraToolStripMenuItem;
         private System.Windows.Forms.Label taxelLabel;
-        private System.Windows.Forms.DataGridView freePaysShow;
         private System.Windows.Forms.ToolStripMenuItem stawkęPodatkuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kwotęWolnaOdPodatkuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem edytujSwojeKontoToolStripMenuItem;

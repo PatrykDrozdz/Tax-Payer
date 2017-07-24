@@ -21,7 +21,6 @@ namespace CSS_database_connection_tries
         {
             InitializeComponent();
             this.li = li;
-            getFreeTaxPayment();
             getDatas();
             this.Login = li.Login;
         }
@@ -41,46 +40,11 @@ namespace CSS_database_connection_tries
         }
 
 
-
-        void getFreeTaxPayment()
-        {
-
-            
-            string selectQuery = "SELECT * FROM taxpayer.freetaxvalue;";
-
-           // this.info_label.Text = li.Login.ToString();
-
-            MySqlConnection conn = new MySqlConnection(connect.connDetail);
-            MySqlCommand command = new MySqlCommand(selectQuery, conn);
-
-            try
-            {
-
-                MySqlDataAdapter adaptData = new MySqlDataAdapter();
-                DataTable dbDatas = new DataTable();
-                BindingSource bSource = new BindingSource();
-
-                adaptData.SelectCommand = command;
-                adaptData.Fill(dbDatas);
-
-                bSource.DataSource = dbDatas;
-                freePaysShow.DataSource = bSource;
-                adaptData.Update(dbDatas);
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-        }
-
         void getDatas()
         {
 
 	
-			string selectQuery = "SELECT * FROM taxpayer.taxes;";
+			string selectQuery = "SELECT taxpayer.taxes.idtaxes, taxpayer.taxes.value, taxpayer.taxes.guaranteedAmount, taxpayer.taxes.downPayment, taxpayer.taxes.maxPayment, taxpayer.freetaxvalue.freePay, taxpayer.taxes.flagT FROM taxpayer.taxes INNER JOIN freetaxvalue ON taxpayer.taxes.freetaxvalue_idfreetaxvalue = taxpayer.freetaxvalue.idfreetaxvalue;";
 
   
              MySqlConnection conn = new MySqlConnection(connect.connDetail);
@@ -163,13 +127,11 @@ namespace CSS_database_connection_tries
         private void refreashToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.getDatas();
-            this.getFreeTaxPayment();
         }
 
         private void refreshButton_Click(object sender, EventArgs e)
         {
             this.getDatas();
-            this.getFreeTaxPayment();
         }
 
         private void Reactive_Click(object sender, EventArgs e)
@@ -218,6 +180,11 @@ namespace CSS_database_connection_tries
             UpdateAccount ua = new UpdateAccount(this);
             ua.Owner = this;
             ua.ShowDialog();
+        }
+
+        private void AdminPanel_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

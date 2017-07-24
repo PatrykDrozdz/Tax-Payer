@@ -8,6 +8,6 @@ namespace CSS_database_connection_tries
 {
     class Connection
     {
-        public string connDetail = "datasource=localhost;port=3306;username=root;password=;";
+        public string connDetail = "datasource=localhost;port=3306;username=root;password=;database=taxpayer;";
     }
 }
